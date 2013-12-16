@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".DialogExampleActivity" >
+	
+    
+    	<Button
+	      android:id="@+id/btnNormal"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_alignParentLeft="true"
+	      android:layout_alignParentTop="true"
+	      android:layout_marginTop="15dp"
+	      android:text="@string/title_btn_Dialog_example_Normal" />
+    	
+	  <Button
+	      android:id="@+id/btnTxtInput"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_alignLeft="@+id/btnNormal"
+	      android:layout_below="@+id/btnNormal"
+	      android:text="@string/title_btn_Dialog_example_TxtInput" />
+
+	  
+	  <Button
+	      android:id="@+id/btnRdiSelect"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btnTxtInput"
+	      android:text="@string/title_btn_Dialog_example_RdiSelect" />
+	   
+	  <Button
+	      android:id="@+id/btnMuliSelect"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btnRdiSelect"
+	      android:text="@string/title_btn_Dialog_example_MuliSelect" />
+	  	   
+	  <Button
+	      android:id="@+id/btnSimpleSelect"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btnMuliSelect"
+	      android:text="@string/title_btn_Dialog_example_SimpleSelect" />
+	  
+	  <Button
+	      android:id="@+id/btnUserDefine"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btnSimpleSelect"
+	      android:text="@string/title_btn_Dialog_example_UserDefine" />
+	  
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" > 
+    <Button
+		android:id="@+id/btn_Dialog"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_marginTop="15dp"
+		android:text="@string/title_btn_Dialog" />
+    
+    <Button
+	      android:id="@+id/btnOther"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btn_Dialog"
+	      android:text="@string/title_btn_Main_Other" />
+    <Button
+	      android:id="@+id/SurfaceView"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btnOther"
+	      android:text="@string/title_btn_Main_SurfaceView" />
+    
+    <Button
+	      android:id="@+id/sysAction"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btn_Dialog"
+	      android:text="@string/title_btn_Main_Sys_Action" />
+    
+    <Button
+	      android:id="@+id/btnHome"
+		    android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentBottom="true"
+	      android:text="@string/title_btn_Main_Home" />
+    
+</RelativeLayout>

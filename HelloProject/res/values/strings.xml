@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- main -->
+    <string name="title_btn_Dialog">对话框示例</string>
+    <string name="title_btn_Main_Other">其它</string>
+    <string name="title_btn_Main_Home">主页</string>
+    <string name="title_btn_Main_Sys_Action">Tab选项卡</string>
+
+    <!-- 对话框示例 -->
+    <string name="title_btn_Dialog_example_Normal">普通对话框</string>
+    <string name="title_btn_Dialog_example_TxtInput">输入对话框</string>
+    <string name="title_btn_Dialog_example_RdiSelect">单选对话框</string>
+    <string name="title_btn_Dialog_example_MuliSelect">多选对话框</string>
+    <string name="title_btn_Dialog_example_SimpleSelect">简单选择对话框</string>
+    <string name="title_btn_Dialog_example_UserDefine">自定义对话框</string>
+
+    <!-- Sys_Action -->
+    <string name="title_activity_sys_action">调用系统Action</string>
+    <string name="title_btn_sys_action_Select">自定义对话框</string>
+    <string name="title_activity_tab">TabActivity</string>
+    <string name="title_activity_fram_exa">FramExaActivity</string>
+    <string name="title_activity_surface_view">SurfaceViewActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

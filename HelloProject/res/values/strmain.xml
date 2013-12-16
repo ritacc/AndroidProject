@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">小猪安卓应用</string>
+   
+    <string name="title_activity_sub">小猪安卓应用</string>
+    <string name="title_activity_laun_ch">小猪安卓应用</string>
+    <string name="title_activity_dialog_example">对话框示例</string>
+    <string name="title_btn_Main_SurfaceView">SurfaceView</string>
+    <string name="title_activity_laun">小猪安卓应用</string>    
+    <string name="alert_dialog_ok">小猪OK</string>
+</resources>
