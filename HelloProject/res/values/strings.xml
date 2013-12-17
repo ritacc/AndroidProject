@@ -24,4 +24,16 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
+    <!-- Surface View -->
+    <string name="title_cirecle">圆</string>
+    <string name="title_square">四边形</string>
+    <string name="title_rect">正方形形</string>
+    <string name="title_activity_img_draw_index">图形与图像处理</string>
+    <string name="title_activity_img_draw_path_test">路径动画</string>
+    <string name="title_activity_img_draw_text">文本动画</string>
+    	<!-- Button -->
+    <string name="title_btn_ImgDrawIndex_PathTest">Path Test</string>
+    <string name="title_btn_ImgDrawIndex_BasciRect">基础形</string>    
+    <string name="title_btn_ImgDrawIndex_Text">文本动画</string>
+
 </resources>

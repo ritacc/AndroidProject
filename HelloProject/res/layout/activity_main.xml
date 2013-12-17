@@ -23,11 +23,11 @@
 	      android:layout_below="@+id/btn_Dialog"
 	      android:text="@string/title_btn_Main_Other" />
     <Button
-	      android:id="@+id/SurfaceView"
+	      android:id="@+id/ImgDrawIndex"
 	      android:layout_width="wrap_content"
 	      android:layout_height="wrap_content"
 	      android:layout_below="@+id/btnOther"
-	      android:text="@string/title_btn_Main_SurfaceView" />
+	      android:text="@string/title_btn_Main_ImgDrawIndex" />
     
     <Button
 	      android:id="@+id/sysAction"

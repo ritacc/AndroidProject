@@ -50,6 +50,18 @@
             android:name="com.example.helloproject.SurfaceViewActivity"
             android:label="@string/title_activity_surface_view" >
         </activity>
+        <activity
+            android:name="com.example.helloproject.ImgDrawIndexActivity"
+            android:label="@string/title_activity_img_draw_index" >
+        </activity>
+        <activity
+            android:name="com.example.helloproject.ImgDrawPathTestActivity"
+            android:label="@string/title_activity_img_draw_path_test" >
+        </activity>
+        <activity
+            android:name="com.example.helloproject.ImgDrawTextActivity"
+            android:label="@string/title_activity_img_draw_text" >
+        </activity>
     </application>
 
 </manifest>

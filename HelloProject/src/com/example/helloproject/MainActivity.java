@@ -52,14 +52,14 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		//SurfaceView
-		final Button btnSuraceView=(Button)findViewById(R.id.SurfaceView);
-		btnSuraceView.setOnClickListener(new OnClickListener()
+		//ImgDraw
+		final Button btnImgDrawIndex=(Button)findViewById(R.id.ImgDrawIndex);
+		btnImgDrawIndex.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(); // 建立Intent
-				intent.setClass(MainActivity.this, SurfaceViewActivity.class); // 设置活动
+				intent.setClass(MainActivity.this, ImgDrawIndexActivity.class); // 设置活动
 				startActivity(intent);
 			}
 		});
