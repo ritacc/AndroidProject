@@ -45,7 +45,7 @@ public class LaunActivity extends LauncherActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.laun, menu);
+		//getMenuInflater().inflate(R.menu.laun, menu);
 		return true;
 	}
 

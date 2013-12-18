@@ -57,7 +57,7 @@ public class ImgDrawIndexActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.img_draw_index, menu);
+		//getMenuInflater().inflate(R.menu.img_draw_index, menu);
 		return true;
 	}
 

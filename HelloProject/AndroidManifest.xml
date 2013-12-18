@@ -62,6 +62,10 @@
             android:name="com.example.helloproject.ImgDrawTextActivity"
             android:label="@string/title_activity_img_draw_text" >
         </activity>
+        <activity
+            android:name="com.example.helloproject.ImgDrawUserDrawActivity"
+            android:label="@string/title_activity_img_draw_user_draw" >
+        </activity>
     </application>
 
 </manifest>
