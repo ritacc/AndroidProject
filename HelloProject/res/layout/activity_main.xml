@@ -33,7 +33,7 @@
 	      android:id="@+id/sysAction"
 	      android:layout_width="wrap_content"
 	      android:layout_height="wrap_content"
-	      android:layout_below="@+id/btn_Dialog"
+	      android:layout_below="@+id/ImgDrawIndex"
 	      android:text="@string/title_btn_Main_Sys_Action" />
     
     <Button

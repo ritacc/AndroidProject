@@ -30,5 +30,17 @@
 	      android:layout_height="wrap_content"
 	      android:layout_below="@+id/btnPathTest"
 	      android:text="@string/title_btn_ImgDrawIndex_Text" />
-
+    
+	<Button
+	      android:id="@+id/btnUserDraw"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btnTextView"
+	      android:text="@string/title_btn_UserDraw_Text" />
+	<Button
+	      android:id="@+id/btnPinbal"
+	      android:layout_width="wrap_content"
+	      android:layout_height="wrap_content"
+	      android:layout_below="@+id/btnUserDraw"
+	      android:text="@string/title_btn_btnPinbal_Text" />
 </RelativeLayout>

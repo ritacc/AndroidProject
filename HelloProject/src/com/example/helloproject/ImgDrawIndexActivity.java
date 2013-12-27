@@ -53,6 +53,28 @@ public class ImgDrawIndexActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		//btnUserDraw
+		final Button btnUserDraw=(Button)findViewById(R.id.btnUserDraw);
+		btnUserDraw.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(); // 建立Intent
+				intent.setClass(ImgDrawIndexActivity.this, ImgDrawUserDrawActivity.class); // 设置活动
+				startActivity(intent);
+			}
+		});
+		//btnPinbal
+		final Button btnPinbal=(Button)findViewById(R.id.btnPinbal);
+		btnPinbal.setOnClickListener(new OnClickListener()
+		{
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(); // 建立Intent
+				intent.setClass(ImgDrawIndexActivity.this, ImgDrawPinbalActivity.class); // 设置活动
+				startActivity(intent);
+			}
+		});
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

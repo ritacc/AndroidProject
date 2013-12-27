@@ -8,10 +8,11 @@
     <string name="title_btn_Main_Sys_Action">Tab选项卡</string>
 
     <!-- color -->
+    <string name="color">颜色</string>
     <string name="color_red">Red</string>
     <string name="color_green">Green</string>
     <string name="color_blue">Blue</string>
-    
+
     <!-- 对话框示例 -->
     <string name="title_btn_Dialog_example_Normal">普通对话框</string>
     <string name="title_btn_Dialog_example_TxtInput">输入对话框</string>
@@ -26,6 +27,7 @@
     <string name="title_activity_tab">TabActivity</string>
     <string name="title_activity_fram_exa">FramExaActivity</string>
     <string name="title_activity_surface_view">SurfaceViewActivity</string>
+    <string name="title_activity_img_draw_user_draw">绘画</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
@@ -40,13 +42,16 @@
     <string name="title_btn_ImgDrawIndex_PathTest">Path Test</string>
     <string name="title_btn_ImgDrawIndex_BasciRect">基础形</string>
     <string name="title_btn_ImgDrawIndex_Text">文本动画</string>
-    <string name="title_activity_img_draw_user_draw">绘画</string>
-    
+    <string name="title_btn_btnPinbal_Text">乒乓球</string>
+	
     <!-- ImgDrawUserDraw -->
-     <string name="width_1">1</string>
-     <string name="width_3">3</string>
-     <string name="width_5">5</string>
-     <string name="blur">blur</string>
-     <string name="emboss">emboss</string>
+    <string name="title_btn_UserDraw_Text">画线</string>
+    <string name="width">线宽度</string>
+    <string name="width_1">1</string>
+    <string name="width_3">3</string>
+    <string name="width_5">5</string>
+    <string name="blur">blur</string>
+    <string name="emboss">emboss</string>
+    <string name="title_activity_img_draw_pinbal">ImgDrawPinbalActivity</string>
 
 </resources>
