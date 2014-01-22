@@ -16,18 +16,18 @@ public class SysActionActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_sys_action);
 		
-		final Button btn=(Button)findViewById(R.id.btnSelect);
-		btn.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View v) {
-				Intent intent=new Intent();
-				intent.setAction(Intent.ACTION_GET_CONTENT);
-				intent.setType("vnd.android.cursor.item/phone");
-				startActivityForResult(intent,PICK_CONTACT);
-			}
-			
-		});
+//		final Button btn=(Button)findViewById(R.id.btnSelect);
+//		btn.setOnClickListener(new OnClickListener()
+//		{
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent=new Intent();
+//				intent.setAction(Intent.ACTION_GET_CONTENT);
+//				intent.setType("vnd.android.cursor.item/phone");
+//				startActivityForResult(intent,PICK_CONTACT);
+//			}
+//			
+//		});
 	}
 	@Override
 	public void onActivityResult(int requestCode,int resultCode,Intent data)

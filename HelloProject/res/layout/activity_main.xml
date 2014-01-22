@@ -17,24 +17,25 @@
 		android:text="@string/title_btn_Dialog" />
     
     <Button
-	      android:id="@+id/btnOther"
+	      android:id="@+id/btnSqlLite"
 	      android:layout_width="wrap_content"
 	      android:layout_height="wrap_content"
 	      android:layout_below="@+id/btn_Dialog"
-	      android:text="@string/title_btn_Main_Other" />
+	      android:text="@string/title_btn_Main_SqlLite" />
     <Button
 	      android:id="@+id/ImgDrawIndex"
 	      android:layout_width="wrap_content"
 	      android:layout_height="wrap_content"
-	      android:layout_below="@+id/btnOther"
+	      android:layout_below="@+id/btnSqlLite"
 	      android:text="@string/title_btn_Main_ImgDrawIndex" />
-    
+    <!-- 
     <Button
 	      android:id="@+id/sysAction"
 	      android:layout_width="wrap_content"
 	      android:layout_height="wrap_content"
 	      android:layout_below="@+id/ImgDrawIndex"
 	      android:text="@string/title_btn_Main_Sys_Action" />
+	 -->
     
     <Button
 	      android:id="@+id/btnHome"

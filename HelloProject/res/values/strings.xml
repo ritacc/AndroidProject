@@ -2,9 +2,9 @@
 <resources>
 
     <!-- main -->
-    <string name="title_btn_Dialog">对话框示例</string>
-    <string name="title_btn_Main_Other">其它</string>
     <string name="title_btn_Main_Home">主页</string>
+    <string name="title_btn_Dialog">对话框示例</string>
+    <string name="title_btn_Main_SqlLite">SqlLite</string>
     <string name="title_btn_Main_Sys_Action">Tab选项卡</string>
 
     <!-- color -->
@@ -43,7 +43,7 @@
     <string name="title_btn_ImgDrawIndex_BasciRect">基础形</string>
     <string name="title_btn_ImgDrawIndex_Text">文本动画</string>
     <string name="title_btn_btnPinbal_Text">乒乓球</string>
-	
+
     <!-- ImgDrawUserDraw -->
     <string name="title_btn_UserDraw_Text">画线</string>
     <string name="width">线宽度</string>
@@ -53,5 +53,14 @@
     <string name="blur">blur</string>
     <string name="emboss">emboss</string>
     <string name="title_activity_img_draw_pinbal">ImgDrawPinbalActivity</string>
+	
+    <!-- title_btn_sql_lite_dict -->
+    <string name="title_btn_sql_lite_dict_Insert">写入</string>
+    <string name="title_btn_sql_lite_dict_Read">读取</string>
+    
+    <!-- sql lite -->
+    <string name="title_activity_sql_lite_index">SqlLiteIndexActivity</string>
+    <string name="title_activity_sql_lite_dict">SqlLiteDictActivity</string>
+    <string name="title_btn_SqlLite_Ditc">生词本</string>
 
 </resources>

@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
 		btnDialog.setOnClickListener(btnDialog_Click);
 		
 		//Other
-		final Button btnOther=(Button)findViewById(R.id.btnOther);
+		final Button btnOther=(Button)findViewById(R.id.btnSqlLite);
 		btnOther.setOnClickListener(new OnClickListener()
 		{
 			@Override
@@ -45,9 +45,12 @@ public class MainActivity extends Activity {
 //				intent.setComponent(comp);
 //				startActivity(intent);
 				
-				Intent intent=new Intent();
-				intent.setAction(MainActivity.strAction);
-				intent.addCategory(MainActivity.strCategory);
+//				Intent intent=new Intent();
+//				intent.setAction(MainActivity.strAction);
+//				intent.addCategory(MainActivity.strCategory);
+//				startActivity(intent);//SqlLiteIndexActivity
+				Intent intent = new Intent(); // 建立Intent
+				intent.setClass(MainActivity.this, SqlLiteIndexActivity.class); // 设置活动
 				startActivity(intent);
 			}
 		});
@@ -75,26 +78,23 @@ public class MainActivity extends Activity {
 				 startActivity(intent);
 			}
 		});
-		
+		/*
 		//Tab
 		final Button btnTab=(Button)findViewById(R.id.sysAction);
 		btnTab.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v) {
-//				Intent intent = new Intent();  
-//				intent.setClass(MainActivity.this, FramExaActivity.class);  
-//				startActivity(intent);
-				
 				//Call
 				Intent intent = new Intent(); 
 				intent.setAction(Intent.ACTION_DIAL);
-				String data="tel:18688983916";
+				String data="tel:18899853614";
 				Uri muri=Uri.parse(data);
 				intent.setData(muri);
 				startActivity(intent);
 			}
 		});
+		*/
 	}
 	
 	class btnDialog_OnClickListener implements OnClickListener

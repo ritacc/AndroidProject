@@ -70,6 +70,14 @@
             android:name="com.example.helloproject.ImgDrawPinbalActivity"
             android:label="@string/title_activity_img_draw_pinbal" >
         </activity>
+        <activity
+            android:name="com.example.helloproject.SqlLiteIndexActivity"
+            android:label="@string/title_activity_sql_lite_index" >
+        </activity>
+        <activity
+            android:name="com.example.helloproject.SqlLiteDictActivity"
+            android:label="@string/title_activity_sql_lite_dict" >
+        </activity>
     </application>
 
 </manifest>

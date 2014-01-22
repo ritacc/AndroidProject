@@ -3,6 +3,7 @@ package com.example.helloproject;
 import com.example.helloproject.ImgDraw.ImgDrawUserDrawView;
  
 import android.os.Bundle;
+import android.os.Environment;
 import android.app.Activity;
 import android.graphics.Color;
 import android.view.Menu;
@@ -30,7 +31,7 @@ public class ImgDrawUserDrawActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
 		
-		
+		//Environment.getExternalStorageState();
 		switch(item.getItemId())
 		{
 			case R.id.red:
