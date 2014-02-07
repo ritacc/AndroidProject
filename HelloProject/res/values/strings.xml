@@ -59,8 +59,8 @@
     <string name="title_btn_sql_lite_dict_Read">读取</string>
     
     <!-- sql lite -->
-    <string name="title_activity_sql_lite_index">SqlLiteIndexActivity</string>
-    <string name="title_activity_sql_lite_dict">SqlLiteDictActivity</string>
+    <string name="title_activity_sql_lite_index">数据库操作</string>
+    <string name="title_activity_sql_lite_dict">数据库记事本</string>
     <string name="title_btn_SqlLite_Ditc">生词本</string>
 
 </resources>

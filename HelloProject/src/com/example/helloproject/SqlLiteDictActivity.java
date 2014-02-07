@@ -49,9 +49,12 @@ public class SqlLiteDictActivity extends Activity {
 		{
 			@Override
 			public void onClick(View v) {
-				String str=((EditText)findViewById(R.id.txtWorld)).getText().toString();
-				InsertData(dbHelper.getReadableDatabase(),str,"");
+				EditText txtWord=(EditText)findViewById(R.id.txtWorld);
+				String str=txtWord.getText().toString();
+				//Clear
+				txtWord.setText("");
 				
+				InsertData(dbHelper.getReadableDatabase(),str,"");				
 				Toast.makeText(SqlLiteDictActivity.this, "Ìí¼Ó³É¹¦¡£", 8000).show();
 			}
 		});	
