@@ -7,32 +7,35 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".SqlLiteDictActivity" >
-
-    
-    <EditText	android:id="@+id/txtWorld"  
-	    		android:layout_width="wrap_content"
+	<LinearLayout android:id="@+id/LLTxt"
+	    android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_width = "match_parent" 
+        android:layout_height = "wrap_content">    
+	    <EditText	android:id="@+id/txtWorld"  
+		    		android:layout_width="wrap_content"
+					android:layout_height="wrap_content"					
+					android:layout_marginTop="15dp"			  	
+				  	android:minWidth="200dip"/>
+    </LinearLayout>
+    <LinearLayout android:id="@+id/LLBtn"	   
+		android:layout_below="@+id/LLTxt"
+		android:layout_width = "match_parent" 
+        android:layout_height = "wrap_content">
+	    <Button
+				android:id="@+id/btn_Insert"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_alignParentLeft="true"
-				android:layout_alignParentTop="true"
-				android:layout_marginTop="15dp"			  	
-			  	android:minWidth="200dip"/>
-    
-   	<Button
-			android:id="@+id/btn_Insert"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_below="@+id/txtWorld"
-			android:text="@string/title_btn_sql_lite_dict_Insert" />
-   
-    <Button	android:id="@+id/btnRead"
-		      android:layout_width="wrap_content"
-		      android:layout_height="wrap_content"
-		      android:layout_below="@+id/btn_Insert"
-		      android:text="@string/title_btn_sql_lite_dict_Read" />
-    
+				android:text="@string/title_btn_sql_lite_dict_Insert" />
+	   
+	    <Button	android:id="@+id/btnRead"
+			      android:layout_width="wrap_content"
+			      android:layout_height="wrap_content"
+			      android:text="@string/title_btn_sql_lite_dict_Read" />
+    </LinearLayout>
     <ListView 
         android:id="@+id/lvList"
-        android:layout_below="@+id/btnRead"
+        android:layout_below="@+id/LLBtn"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
          android:background="@drawable/dark"
