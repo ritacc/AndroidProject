@@ -53,14 +53,16 @@
     <string name="blur">blur</string>
     <string name="emboss">emboss</string>
     <string name="title_activity_img_draw_pinbal">ImgDrawPinbalActivity</string>
-	
+
     <!-- title_btn_sql_lite_dict -->
     <string name="title_btn_sql_lite_dict_Insert">写入</string>
     <string name="title_btn_sql_lite_dict_Read">读取</string>
-    
+
     <!-- sql lite -->
     <string name="title_activity_sql_lite_index">数据库操作</string>
     <string name="title_activity_sql_lite_dict">数据库记事本</string>
     <string name="title_btn_SqlLite_Ditc">生词本</string>
+    <string name="title_activity_list_on_long_click">ListOnLongClickActivity</string>
 
+    
 </resources>

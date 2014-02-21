@@ -78,6 +78,10 @@
             android:name="com.example.helloproject.SqlLiteDictActivity"
             android:label="@string/title_activity_sql_lite_dict" >
         </activity>
+        <activity
+            android:name="com.example.helloproject.ListOnLongClickActivity"
+            android:label="@string/title_activity_list_on_long_click" >
+        </activity>
     </application>
 
 </manifest>

@@ -27,51 +27,52 @@ public final class R {
         public static final int white=0x7f020001;
     }
     public static final class id {
-        public static final int ImgDrawIndex=0x7f080011;
-        public static final int LLBtn=0x7f080015;
-        public static final int LLTxt=0x7f080013;
-        public static final int action_settings=0x7f080024;
-        public static final int blue=0x7f080027;
-        public static final int blur=0x7f08002b;
-        public static final int btnDitc=0x7f08001b;
-        public static final int btnHome=0x7f080012;
+        public static final int ImgDrawIndex=0x7f080012;
+        public static final int LLBtn=0x7f080016;
+        public static final int LLTxt=0x7f080014;
+        public static final int action_settings=0x7f080025;
+        public static final int blue=0x7f080028;
+        public static final int blur=0x7f08002c;
+        public static final int btnDitc=0x7f08001c;
+        public static final int btnHome=0x7f080013;
         public static final int btnMuliSelect=0x7f080003;
         public static final int btnNormal=0x7f080000;
         public static final int btnPathTest=0x7f08000b;
         public static final int btnPinbal=0x7f08000e;
         public static final int btnRdiSelect=0x7f080002;
-        public static final int btnRead=0x7f080017;
+        public static final int btnRead=0x7f080018;
         public static final int btnSimpleSelect=0x7f080004;
-        public static final int btnSqlLite=0x7f080010;
+        public static final int btnSqlLite=0x7f080011;
         public static final int btnTextView=0x7f08000c;
         public static final int btnTxtInput=0x7f080001;
         public static final int btnUserDefine=0x7f080005;
         public static final int btnUserDraw=0x7f08000d;
         public static final int btn_BasicView=0x7f08000a;
-        public static final int btn_Dialog=0x7f08000f;
-        public static final int btn_Insert=0x7f080016;
-        public static final int dialog=0x7f08001d;
-        public static final int dialogname=0x7f08001e;
-        public static final int dialognum=0x7f080021;
-        public static final int emboss=0x7f08002c;
-        public static final int etPassWord=0x7f080023;
-        public static final int etUserName=0x7f080020;
+        public static final int btn_Dialog=0x7f080010;
+        public static final int btn_Insert=0x7f080017;
+        public static final int dialog=0x7f08001e;
+        public static final int dialogname=0x7f08001f;
+        public static final int dialognum=0x7f080022;
+        public static final int emboss=0x7f08002d;
+        public static final int etPassWord=0x7f080024;
+        public static final int etUserName=0x7f080021;
         public static final int firstButton=0x7f080006;
         public static final int firstFragment=0x7f080007;
-        public static final int green=0x7f080026;
-        public static final int info=0x7f08001a;
-        public static final int lvList=0x7f080018;
-        public static final int red=0x7f080025;
+        public static final int green=0x7f080027;
+        public static final int info=0x7f08001b;
+        public static final int lvList=0x7f080019;
+        public static final int myListViewlayout=0x7f08000f;
+        public static final int red=0x7f080026;
         public static final int secondButton=0x7f080008;
         public static final int secondFragment=0x7f080009;
-        public static final int title=0x7f080019;
-        public static final int tvPassWord=0x7f080022;
-        public static final int tvUserName=0x7f08001f;
-        public static final int txtShow=0x7f08001c;
-        public static final int txtWorld=0x7f080014;
-        public static final int width_1=0x7f080028;
-        public static final int width_3=0x7f080029;
-        public static final int width_5=0x7f08002a;
+        public static final int title=0x7f08001a;
+        public static final int tvPassWord=0x7f080023;
+        public static final int tvUserName=0x7f080020;
+        public static final int txtShow=0x7f08001d;
+        public static final int txtWorld=0x7f080015;
+        public static final int width_1=0x7f080029;
+        public static final int width_3=0x7f08002a;
+        public static final int width_5=0x7f08002b;
     }
     public static final class layout {
         public static final int activity_dialog_example=0x7f030000;
@@ -79,25 +80,27 @@ public final class R {
         public static final int activity_img_draw_index=0x7f030002;
         public static final int activity_img_draw_pinbal=0x7f030003;
         public static final int activity_img_draw_user_draw=0x7f030004;
-        public static final int activity_main=0x7f030005;
-        public static final int activity_sql_lite_dict=0x7f030006;
-        public static final int activity_sql_lite_dict_items=0x7f030007;
-        public static final int activity_sql_lite_index=0x7f030008;
-        public static final int activity_sub=0x7f030009;
-        public static final int activity_sys_action=0x7f03000a;
-        public static final int dialoglayout=0x7f03000b;
+        public static final int activity_list_on_long_click=0x7f030005;
+        public static final int activity_main=0x7f030006;
+        public static final int activity_sql_lite_dict=0x7f030007;
+        public static final int activity_sql_lite_dict_items=0x7f030008;
+        public static final int activity_sql_lite_index=0x7f030009;
+        public static final int activity_sub=0x7f03000a;
+        public static final int activity_sys_action=0x7f03000b;
+        public static final int dialoglayout=0x7f03000c;
     }
     public static final class menu {
         public static final int img_draw_pinbal=0x7f070000;
         public static final int img_draw_user_draw=0x7f070001;
-        public static final int main=0x7f070002;
-        public static final int sql_lite_dict=0x7f070003;
-        public static final int sql_lite_index=0x7f070004;
+        public static final int list_on_long_click=0x7f070002;
+        public static final int main=0x7f070003;
+        public static final int sql_lite_dict=0x7f070004;
+        public static final int sql_lite_index=0x7f070005;
     }
     public static final class string {
         public static final int action_settings=0x7f050014;
-        public static final int alert_dialog_ok=0x7f050033;
-        public static final int app_name=0x7f05002d;
+        public static final int alert_dialog_ok=0x7f050034;
+        public static final int app_name=0x7f05002e;
         public static final int blur=0x7f050025;
         /**  color 
          */
@@ -107,20 +110,21 @@ public final class R {
         public static final int color_red=0x7f050005;
         public static final int emboss=0x7f050026;
         public static final int hello_world=0x7f050015;
-        public static final int title_activity_dialog_example=0x7f050030;
+        public static final int title_activity_dialog_example=0x7f050031;
         public static final int title_activity_fram_exa=0x7f050011;
         public static final int title_activity_img_draw_index=0x7f050019;
         public static final int title_activity_img_draw_path_test=0x7f05001a;
         public static final int title_activity_img_draw_pinbal=0x7f050027;
         public static final int title_activity_img_draw_text=0x7f05001b;
         public static final int title_activity_img_draw_user_draw=0x7f050013;
-        public static final int title_activity_laun=0x7f050032;
-        public static final int title_activity_laun_ch=0x7f05002f;
+        public static final int title_activity_laun=0x7f050033;
+        public static final int title_activity_laun_ch=0x7f050030;
+        public static final int title_activity_list_on_long_click=0x7f05002d;
         public static final int title_activity_sql_lite_dict=0x7f05002b;
         /**  sql lite 
          */
         public static final int title_activity_sql_lite_index=0x7f05002a;
-        public static final int title_activity_sub=0x7f05002e;
+        public static final int title_activity_sub=0x7f05002f;
         public static final int title_activity_surface_view=0x7f050012;
         /**  Sys_Action 
          */
@@ -143,7 +147,7 @@ public final class R {
         /**  main 
          */
         public static final int title_btn_Main_Home=0x7f050000;
-        public static final int title_btn_Main_ImgDrawIndex=0x7f050031;
+        public static final int title_btn_Main_ImgDrawIndex=0x7f050032;
         public static final int title_btn_Main_SqlLite=0x7f050002;
         public static final int title_btn_Main_Sys_Action=0x7f050003;
         public static final int title_btn_SqlLite_Ditc=0x7f05002c;

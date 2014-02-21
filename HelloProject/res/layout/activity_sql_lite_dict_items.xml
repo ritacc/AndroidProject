@@ -17,5 +17,4 @@
 			android:textColor="@drawable/red"
 			android:textSize="13dp" />
 	</LinearLayout>
-
 </LinearLayout>

@@ -72,10 +72,14 @@ public class MainActivity extends Activity {
 		{
 			@Override
 			public void onClick(View v) {
-				 Intent intent=new Intent();
+				 /*Intent intent=new Intent();
 				 intent.setAction(Intent.ACTION_MAIN);
 				 intent.addCategory(Intent.CATEGORY_HOME);
-				 startActivity(intent);
+				 startActivity(intent);*/
+				
+				Intent intent = new Intent(); // 建立Intent
+				intent.setClass(MainActivity.this, ListOnLongClickActivity.class); // 设置活动
+				startActivity(intent);
 			}
 		});
 		/*
