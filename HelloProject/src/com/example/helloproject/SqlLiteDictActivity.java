@@ -8,15 +8,11 @@ import java.util.Map;
 import DB.MyDatabaseHelper;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -37,7 +33,7 @@ public class SqlLiteDictActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.sql_lite_dict, menu);
+		//getMenuInflater().inflate(R.menu.sql_lite_dict, menu);
 		return true;
 	}
 	

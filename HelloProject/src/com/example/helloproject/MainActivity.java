@@ -1,5 +1,9 @@
 package com.example.helloproject;
 
+
+
+import com.example.helloproject.multichoice.MultichoiceIndexActivity;
+
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Activity;
@@ -78,7 +82,7 @@ public class MainActivity extends Activity {
 				 startActivity(intent);*/
 				
 				Intent intent = new Intent(); // 建立Intent
-				intent.setClass(MainActivity.this, ListOnLongClickActivity.class); // 设置活动
+				intent.setClass(MainActivity.this, MultichoiceIndexActivity.class); // 设置活动
 				startActivity(intent);
 			}
 		});
