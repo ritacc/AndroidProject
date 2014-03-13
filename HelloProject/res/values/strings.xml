@@ -62,7 +62,7 @@
     <string name="title_activity_sql_lite_index">数据库操作</string>
     <string name="title_activity_sql_lite_dict">数据库记事本</string>
     <string name="title_btn_SqlLite_Ditc">生词本</string>
-    
+
     <!-- 多选 -->
     <string name="title_activity_list_on_long_click">列表长按页</string>
     <string name="title_activity_multichoice_index">多选主页</string>
@@ -72,4 +72,6 @@
     <string name="menu_reset_list">Reset list</string>
     <string name="menu_share">Share</string>
     <string name="menu_discard">Discard</string>
+    <string name="title_activity_test">TestActivity</string>
+
 </resources>

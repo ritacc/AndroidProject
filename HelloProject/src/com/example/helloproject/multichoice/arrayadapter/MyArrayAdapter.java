@@ -37,7 +37,8 @@ public class MyArrayAdapter extends MultiChoiceArrayAdapter<String> {
 		inflater.inflate(R.menu.my_action_mode, menu);
 		return true;
 	}
-
+	
+	
 	@Override
 	public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
 		if (item.getItemId() == R.id.menu_share) {

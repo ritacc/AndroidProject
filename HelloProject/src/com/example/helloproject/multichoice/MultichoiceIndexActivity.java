@@ -5,7 +5,9 @@ import java.util.List;
 
 import com.actionbarsherlock.app.SherlockListActivity;
 import com.example.helloproject.R;
+ 
 import com.example.helloproject.multichoice.arrayadapter.ArrayAdapterActivity;
+import com.example.helloproject.multichoice.arrayadapter.TestActivity;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -18,8 +20,9 @@ import android.widget.ListView;
 public class MultichoiceIndexActivity extends SherlockListActivity {
 	
 	 private List<ActivityInfo> activitiesInfo = Arrays.asList(
-	            new ActivityInfo(ArrayAdapterActivity.class, R.string.ArrayAdapterActivity)
-	            );
+	            new ActivityInfo(ArrayAdapterActivity.class, R.string.ArrayAdapterActivity),
+	            new ActivityInfo(TestActivity.class, R.string.title_square));
+	 
 	 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,7 @@ public class MultichoiceIndexActivity extends SherlockListActivity {
 		setContentView(R.layout.activity_multichoice_index);
 		
 		 String[] titles = getActivityTitles();
-	
+		 
 		setListAdapter(new ArrayAdapter<String>(
                 this, android.R.layout.simple_list_item_1, android.R.id.text1, titles));
 	}
