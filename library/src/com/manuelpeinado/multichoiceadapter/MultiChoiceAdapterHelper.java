@@ -186,6 +186,7 @@ class MultiChoiceAdapterHelper implements OnItemLongClickListener, OnItemClickLi
         }
         Resources res = adapterView.getResources();
         String title = res.getQuantityString(R.plurals.selected_items, count, count);
+       
         actionMode.setTitle(title);
     }
 

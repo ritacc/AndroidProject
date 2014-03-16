@@ -91,9 +91,14 @@
             android:label="@string/title_activity_array_adapter" >
         </activity>
         <activity
-            android:name="com.example.helloproject.multichoice.arrayadapter.TestActivity"
-            android:label="@string/title_activity_test" >
+            android:name="com.example.helloproject.multichoice.arrayadapter.TwoLinesArrayAdapterActivity"
+            android:label="@string/title_Two_Lines_Array_Adapter_Activity" >
         </activity>
+        <activity
+            android:name="com.example.helloproject.multichoice.arrayadapter.TwoLinesArrayAdapter"
+            android:label="@string/title_Two_Lines_Array_Adapter_Activity" >
+        </activity>
+        
     </application>
 
 </manifest>

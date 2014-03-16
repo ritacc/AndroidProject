@@ -1190,6 +1190,7 @@ containing a value of this type.
         public static final int menu_reset_list=0x7f09003f;
         public static final int menu_select_all=0x7f09003e;
         public static final int menu_share=0x7f090040;
+        public static final int title_Two_Lines_Array_Adapter_Activity=0x7f090042;
         public static final int title_activity_array_adapter=0x7f09003c;
         public static final int title_activity_dialog_example=0x7f090046;
         public static final int title_activity_fram_exa=0x7f09001e;
@@ -1214,7 +1215,6 @@ containing a value of this type.
          */
         public static final int title_activity_sys_action=0x7f09001b;
         public static final int title_activity_tab=0x7f09001d;
-        public static final int title_activity_test=0x7f090042;
         public static final int title_btn_Dialog=0x7f09000e;
         public static final int title_btn_Dialog_example_MuliSelect=0x7f090018;
         /**  对话框示例 

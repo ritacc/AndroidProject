@@ -13,6 +13,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -72,11 +74,21 @@ public class SqlLiteDictActivity extends Activity {
 						,R.layout.activity_sql_lite_dict_items
 						,new String[]{"title","info"},
 						new int[]{R.id.title,R.id.info});
+				
 				//lvList.setAdapter(new ArrayAdapter<String>(this, null,converCursorToList(cursor));
 				//lvList.setAdapter(adapter);
 				//setContentView(lvList);
+				lvList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 				lvList.setAdapter(listAdap);
-				 
+				lvList.setOnItemClickListener(new OnItemClickListener(){
+
+					@Override
+					public void onItemClick(AdapterView<?> arg0, View arg1,
+							int arg2, long arg3) {
+						// TODO Auto-generated method stub
+						Toast.makeText(SqlLiteDictActivity.this, "1", 1).show();
+					}
+				});			 
 			}
 		});
 	}

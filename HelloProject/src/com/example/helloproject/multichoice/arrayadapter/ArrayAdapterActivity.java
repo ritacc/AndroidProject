@@ -65,11 +65,11 @@ public class ArrayAdapterActivity extends SherlockActivity  implements OnItemCli
     }
 
     private void rebuildList(Bundle savedInstanceState) {
-        String[] itemArray = getResources().getStringArray(R.array.names);
-        ArrayList<String> items = new ArrayList<String>(Arrays.asList(itemArray));
-        adapter = new MyArrayAdapter(savedInstanceState, this, items);
-        adapter.setOnItemClickListener(this);
-        adapter.setAdapterView(getListView());
+//        String[] itemArray = getResources().getStringArray(R.array.names);
+//        ArrayList<String> items = new ArrayList<String>(Arrays.asList(itemArray));
+//        adapter = new MyArrayAdapter(savedInstanceState, this, items);
+//        adapter.setOnItemClickListener(this);
+//        adapter.setAdapterView(getListView());
     }
     
     private ListView getListView() {

@@ -7,7 +7,7 @@ import com.actionbarsherlock.app.SherlockListActivity;
 import com.example.helloproject.R;
  
 import com.example.helloproject.multichoice.arrayadapter.ArrayAdapterActivity;
-import com.example.helloproject.multichoice.arrayadapter.TestActivity;
+import com.example.helloproject.multichoice.arrayadapter.TwoLinesArrayAdapterActivity;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -21,7 +21,7 @@ public class MultichoiceIndexActivity extends SherlockListActivity {
 	
 	 private List<ActivityInfo> activitiesInfo = Arrays.asList(
 	            new ActivityInfo(ArrayAdapterActivity.class, R.string.ArrayAdapterActivity),
-	            new ActivityInfo(TestActivity.class, R.string.title_square));
+	            new ActivityInfo(TwoLinesArrayAdapterActivity.class, R.string.title_Two_Lines_Array_Adapter_Activity));
 	 
 	 
 	@Override
@@ -36,11 +36,11 @@ public class MultichoiceIndexActivity extends SherlockListActivity {
 	}
 
 	 @Override
-	    protected void onListItemClick(ListView l, View v, int position, long id) {
-	        Class<? extends Activity> class_ = activitiesInfo.get(position).activityClass;
-	        Intent intent = new Intent(this, class_);
-	        startActivity(intent);
-	    }
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        Class<? extends Activity> class_ = activitiesInfo.get(position).activityClass;
+        Intent intent = new Intent(this, class_);
+        startActivity(intent);
+    }
 	
 	private String[] getActivityTitles() {
         String[] result = new String[activitiesInfo.size()];
