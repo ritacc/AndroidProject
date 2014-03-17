@@ -1,8 +1,5 @@
 package com.example.helloproject.multichoice.arrayadapter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import com.actionbarsherlock.app.SherlockActivity;
 import com.example.helloproject.R;
 import com.example.helloproject.multichoice.MultichoiceIndexActivity;

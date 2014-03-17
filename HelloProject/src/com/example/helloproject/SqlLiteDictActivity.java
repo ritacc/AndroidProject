@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.example.helloproject.R.string;
+
 import DB.MyDatabaseHelper;
 import android.os.Bundle;
 import android.app.Activity;
@@ -123,5 +125,5 @@ public class SqlLiteDictActivity extends Activity {
 			dbHelper.close();
 		}
 	}
-
+	
 }
