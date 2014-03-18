@@ -10,6 +10,17 @@
         android:id="@+id/menu_discard"
         android:icon="@drawable/ic_content_discard"
         android:showAsAction="always"
-        android:title="@string/menu_discard"/>
- 
+        android:title="@string/menu_discard">
+	        <menu >
+	            <group>
+	                <item 
+	                    android:id="@+id/width_1" 
+	                    android:icon="@drawable/ic_content_discard"
+	                    android:title="@string/width_1"/>
+	                <item android:id="@+id/width_3" android:title="@string/width_3"/>
+	                <item android:id="@+id/width_5" android:title="@string/width_5"/>
+	            </group>
+	        </menu>
+       </item>
+ 	
 </menu>
