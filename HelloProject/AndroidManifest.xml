@@ -18,6 +18,7 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -96,7 +97,11 @@
         <activity
             android:name="com.example.helloproject.multichoice.arrayadapter.TwoLinesArrayAdapter"
             android:label="@string/title_Two_Lines_Array_Adapter_Activity" >
-        </activity>        
+        </activity>
+        <activity
+            android:name="com.ritacc.cardadmin.CardAdminIndexActivity"
+            android:label="@string/title_activity_card_admin_index" >
+        </activity>
     </application>
 
 </manifest>

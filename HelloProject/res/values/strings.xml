@@ -72,7 +72,7 @@
     <string name="menu_reset_list">Reset list</string>
     <string name="menu_share">Share</string>
     <string name="menu_discard">Discard</string>
-    
     <string name="title_Two_Lines_Array_Adapter_Activity">两行列表</string>
-
+    <string name="title_activity_card_admin_index">信用卡还款管理</string>
+	<string name="title_card_admin">卡管理</string>
 </resources>
