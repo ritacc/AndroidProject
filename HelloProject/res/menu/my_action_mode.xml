@@ -10,6 +10,7 @@
         android:id="@+id/menu_discard"
         android:icon="@drawable/ic_content_discard"
         android:showAsAction="always"
-        android:title="@string/menu_discard"/>
- 
+        android:title="@string/menu_discard">
+       </item>
+ 	
 </menu>

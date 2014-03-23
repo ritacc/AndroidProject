@@ -4,6 +4,7 @@ package com.example.helloproject;
 
 import com.example.helloproject.multichoice.MultichoiceIndexActivity;
 import com.example.helloproject.multichoice.arrayadapter.TwoLinesArrayAdapterActivity;
+import com.ritacc.cardadmin.CardAdminIndexActivity;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -91,23 +92,20 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-		/*
-		//Tab
-		final Button btnTab=(Button)findViewById(R.id.sysAction);
-		btnTab.setOnClickListener(new OnClickListener()
+		 
+		//btnCardAdmin
+		final Button btnCardAdmin=(Button)findViewById(R.id.btnCardAdmin);
+		btnCardAdmin.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View v) {
 				//Call
-				Intent intent = new Intent(); 
-				intent.setAction(Intent.ACTION_DIAL);
-				String data="tel:18899853614";
-				Uri muri=Uri.parse(data);
-				intent.setData(muri);
+				Intent intent = new Intent(); // ½¨Á¢Intent
+				intent.setClass(MainActivity.this, CardAdminIndexActivity.class);  
 				startActivity(intent);
 			}
 		});
-		*/
+		 
 	}
 	
 	class btnDialog_OnClickListener implements OnClickListener

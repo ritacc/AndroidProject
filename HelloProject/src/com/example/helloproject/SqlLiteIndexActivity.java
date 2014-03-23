@@ -1,16 +1,21 @@
 package com.example.helloproject;
 
 import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.ActionMode;
+import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.example.helloproject.multichoice.MultichoiceIndexActivity;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
+
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuItem;
+
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+
 
 public class SqlLiteIndexActivity  extends SherlockActivity {
 
@@ -30,6 +35,12 @@ public class SqlLiteIndexActivity  extends SherlockActivity {
 //	}
 	
 	@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getSupportMenuInflater().inflate(R.menu.my_action_mode, menu);
+        return true;
+    }
+	
+	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case android.R.id.home:
@@ -37,7 +48,7 @@ public class SqlLiteIndexActivity  extends SherlockActivity {
             parentActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(parentActivityIntent);
             finish();
-            return true;       
+            return true;
         }
         return false;
     }

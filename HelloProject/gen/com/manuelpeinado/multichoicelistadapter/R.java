@@ -349,10 +349,10 @@ public final class R {
 		public static final int abs__search_dropdown_item_icons_2line = 0x7f030012;
 		public static final int abs__search_view = 0x7f030013;
 		public static final int abs__simple_dropdown_hint = 0x7f030014;
-		public static final int mca__simple_list_item_checkable_1 = 0x7f030027;
-		public static final int mca__simple_list_item_checkable_2 = 0x7f030028;
-		public static final int sherlock_spinner_dropdown_item = 0x7f030029;
-		public static final int sherlock_spinner_item = 0x7f03002a;
+		public static final int mca__simple_list_item_checkable_1 = 0x7f030028;
+		public static final int mca__simple_list_item_checkable_2 = 0x7f030029;
+		public static final int sherlock_spinner_dropdown_item = 0x7f03002a;
+		public static final int sherlock_spinner_item = 0x7f03002b;
 	}
 	public static final class plurals {
 		public static final int selected_items = 0x7f0b0000;

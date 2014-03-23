@@ -123,5 +123,5 @@ public class SqlLiteDictActivity extends Activity {
 			dbHelper.close();
 		}
 	}
-
+	
 }
