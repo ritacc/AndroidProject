@@ -62,7 +62,7 @@ public class SqlLiteDictActivity extends Activity {
 		{
 			@Override
 			public void onClick(View v) {
-				
+		
 				Cursor cursor=dbHelper.getReadableDatabase().rawQuery(
 						"select * from dict ",null);
 				//Intent intent=new Intent(SqlLiteDictActivity.this,ResultActivity.class);

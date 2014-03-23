@@ -37,10 +37,12 @@ public class ArrayAdapterActivity extends SherlockActivity  implements OnItemCli
 
 	public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         Toast.makeText(this, "Item click: " + adapter.getItem(position), Toast.LENGTH_SHORT).show();
+        
     }
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
+		
         switch (item.getItemId()) {
         case android.R.id.home:
             Intent parentActivityIntent = new Intent(this, MultichoiceIndexActivity.class);

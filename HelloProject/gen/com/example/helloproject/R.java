@@ -954,18 +954,20 @@ containing a value of this type.
         public static final int bank_of_america=0x7f020071;
         public static final int chrysler=0x7f020072;
         public static final int custom_list_item_background=0x7f020073;
-        public static final int dark=0x7f02007e;
+        public static final int dark=0x7f020080;
         public static final int empire_state=0x7f020074;
         public static final int ic_content_discard=0x7f020075;
         public static final int ic_launcher=0x7f020076;
         public static final int ic_social_share=0x7f020077;
-        public static final int mca__gallery_selector=0x7f020078;
-        public static final int mca__grid_item_fg_pressed=0x7f020079;
-        public static final int mca__list_item_selector=0x7f02007a;
-        public static final int nyt=0x7f02007b;
-        public static final int one_wtc=0x7f02007c;
-        public static final int red=0x7f02007f;
-        public static final int white=0x7f02007d;
+        public static final int img77=0x7f020078;
+        public static final int mca__gallery_selector=0x7f020079;
+        public static final int mca__grid_item_fg_pressed=0x7f02007a;
+        public static final int mca__list_item_selector=0x7f02007b;
+        public static final int nyt=0x7f02007c;
+        public static final int one_wtc=0x7f02007d;
+        public static final int red=0x7f020081;
+        public static final int uploadfiles_subject3_img77=0x7f02007e;
+        public static final int white=0x7f02007f;
     }
     public static final class id {
         public static final int ImgDrawIndex=0x7f040046;
