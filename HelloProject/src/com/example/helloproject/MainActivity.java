@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				//Call
 				Intent intent = new Intent(); // ½¨Á¢Intent
-				intent.setClass(MainActivity.this, CardAdminIndexActivity.class);  
+				//intent.setClass(MainActivity.this, CardAdminIndexActivity.class);  
 				startActivity(intent);
 			}
 		});

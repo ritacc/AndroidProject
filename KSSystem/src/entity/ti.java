@@ -2,22 +2,36 @@ package entity;
 
 import android.R.string;
 
-public class ti {
+public class TI {
 	public int ID;
 	
 	public int subjectType ;
 	
-	public string IssueSubject ;
+	public String IssueSubject ;
 	
-	public string EIssueSubject ;
+	public String EIssueSubject ;
 	
-	public string IssueType_ID ;
+	public String IssueType_ID ;
 	
-	public string Answer ;
+	public String Answer ;
 	
-	public string IssueResult ;
+	public String IssueResult ;
 	
-	public string EIssueResult ;
+	public String EIssueResult ;
 	
-	public string ImagePath ;
+	public String ImagePath ;
+	
+	public TI(int _ID,int _subjectType,String _IssueSubject,String _EIssueSubject,String _IssueType_ID,		
+			String _Answer,String _IssueResult,String _EIssueResult,String _ImagePath)
+	{
+		ID=_ID;
+		subjectType=_subjectType;
+		IssueSubject=_IssueSubject;
+		EIssueSubject=_EIssueSubject;
+		IssueType_ID=_IssueType_ID;
+		Answer=_Answer;
+		IssueResult=_IssueResult;
+		EIssueResult=_EIssueResult;
+		ImagePath=_ImagePath;
+	}
 }
