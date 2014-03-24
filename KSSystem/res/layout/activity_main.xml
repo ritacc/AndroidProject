@@ -9,8 +9,48 @@
     tools:context=".MainActivity" >
 
     <TextView
+        android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
+    <ImageView
+        android:id="@+id/imgItems"
+        android:layout_width="315dp"
+        android:layout_height="187dp"
+        android:layout_below="@+id/txtTitle"
+        android:src="@drawable/ic_launcher" />
+
+    <CheckBox
+        android:id="@+id/cbA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/imgItems"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/cbB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cbA"
+        android:text="CheckBox" />
+
+    <CheckBox
+        android:id="@+id/cbC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cbB"
+        android:text="CheckBox" />
+    
+	 <CheckBox
+        android:id="@+id/cbD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cbC"
+        android:text="CheckBox" />
+	 
 </RelativeLayout>

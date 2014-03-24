@@ -1,20 +1,20 @@
 package entity;
 
-import android.R.string;
-
+ 
+// ,"<br /><br /></p>","",""));
 public class TI {
 	public int ID;
 	
 	public int subjectType ;
-	
+	//?林某驾车以110公里/小时的速度在城市道路行驶，与一辆机动车追尾后弃车逃离被群众拦下。经鉴定，
 	public String IssueSubject ;
 	
 	public String EIssueSubject ;
-	
+	//"2"
 	public String IssueType_ID ;
-	
+	//"A,B,D"
 	public String Answer ;
-	
+	//<p>A.?醉酒驾驶<br />B.?超速驾驶<br />C.?疲劳驾驶<br /> D.?肇事逃逸
 	public String IssueResult ;
 	
 	public String EIssueResult ;
