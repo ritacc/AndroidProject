@@ -93,12 +93,15 @@ public class MainActivity extends Activity {
 			{
 				Log.d("ErrorMsg ","´¦ÀíÍ¼Æ¬.");
 				//imgItems.setVisibility(View.VISIBLE);
+				imgItems.setImageResource(R.drawable.uploadfiles_subject3_img124);
 			}
 			else
 			{
 				Log.d("ErrorMsg ","Òþ²ØÍ¼Æ¬.");
 				//imgItems.setEnabled(enabled)
 				//imgItems.setVisibility(View.INVISIBLE);
+				
+				imgItems.setImageResource(R.drawable.aqwmjs_image_02);
 			}
 //			Log.d("Answer", obj.Answer);
 //			Log.d("IssueResult", obj.IssueResult);
