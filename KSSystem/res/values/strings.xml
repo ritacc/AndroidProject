@@ -4,4 +4,7 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world"></string>
 	<string name="menu_discard">discard</string>
+	
+	<string name="right">√</string>
+	<string name="error">×</string>
 </resources>
