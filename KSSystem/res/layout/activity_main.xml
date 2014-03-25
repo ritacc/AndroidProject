@@ -32,19 +32,16 @@
 			android:layout_width="wrap_content"    
 			android:layout_height="wrap_content"   
 			android:orientation="vertical">  
-	    <RadioButton 
-			android:id="@+id/rdiRight"
-			android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
-        	android:layout_alignParentLeft="true"
-			android:text="@string/right"/>
-	    <RadioButton 
-			android:id="@+id/rdiError"
-			android:layout_width="wrap_content"
-        	android:layout_height="wrap_content"
-        	android:layout_alignParentLeft="true"
-			android:layout_below="@+id/rdiRight"
-			android:text="@string/error"/>
+			    <RadioButton 
+					android:id="@+id/rdiRight"
+					android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"
+					android:text="@string/right"/>
+			    <RadioButton 
+					android:id="@+id/rdiError"
+					android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"
+					android:text="@string/error"/>
 	    </RadioGroup>
     </RelativeLayout>
     
@@ -60,26 +57,23 @@
 			android:layout_height="wrap_content"   
 			android:orientation="vertical">  
         
-		    <RadioButton 
-				android:id="@+id/rdiA"
-				android:layout_width="wrap_content"
-	        	android:layout_height="wrap_content"
-	        	android:text=""/>
-		    <RadioButton 
-				android:id="@+id/rdiB"
-				android:layout_width="fill_parent"
-				android:layout_height="match_parent"
-				android:text=""/>
-		    <RadioButton 
-				android:id="@+id/rdiC"
-				android:layout_width="wrap_content"
-	        	android:layout_height="wrap_content"
-				android:text=""/>
-		    <RadioButton 
-				android:id="@+id/rdiD"
-				android:layout_width="wrap_content"
-	        	android:layout_height="wrap_content"
-				android:text=""/>
+			    <RadioButton 
+					android:id="@+id/rdiA"
+					android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"
+		        	android:text=""/>
+			    <RadioButton 
+					android:id="@+id/rdiB"
+					android:layout_width="fill_parent"
+					android:layout_height="match_parent"/>
+			    <RadioButton 
+					android:id="@+id/rdiC"
+					android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"/>
+			    <RadioButton 
+					android:id="@+id/rdiD"
+					android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"/>
 	    </RadioGroup>
     </RelativeLayout>
 	<RelativeLayout 
@@ -88,32 +82,32 @@
 	    android:layout_height="match_parent"
 	     android:layout_below="@+id/imgItems"
 	    android:layout_alignParentLeft="true">
-    <CheckBox
-        android:id="@+id/cbA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"/>
-
-    <CheckBox
-        android:id="@+id/cbB"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/cbA"/>
-
-    <CheckBox
-        android:id="@+id/cbC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/cbB"/>
-    
-	 <CheckBox
-        android:id="@+id/cbD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/cbC"/>
+		    <CheckBox
+		        android:id="@+id/cbA"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"/>
+		
+		    <CheckBox
+		        android:id="@+id/cbB"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_below="@+id/cbA"/>
+		
+		    <CheckBox
+		        android:id="@+id/cbC"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_below="@+id/cbB"/>
+		    
+			 <CheckBox
+		        android:id="@+id/cbD"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_alignParentLeft="true"
+		        android:layout_below="@+id/cbC"/>
 	</RelativeLayout>
 	 
 </RelativeLayout>

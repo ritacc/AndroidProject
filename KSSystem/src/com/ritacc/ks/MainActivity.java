@@ -9,11 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager.LayoutParams;
- 
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +22,7 @@ public class MainActivity extends Activity {
 	private TK mtk;
 	private TextView txtTitle=null;
 	private ImageView imgItems=null;
+	
 	//checked box
 	CheckBox cbA=null;
 	CheckBox cbB=null;
@@ -40,18 +40,7 @@ public class MainActivity extends Activity {
 	RelativeLayout RLayCB=null;
 	RelativeLayout RLayBoolean=null;
 	RelativeLayout RLayRDI=null;
-	
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		mtk=new TK();
-		 
-		initItems();
-		LoadItmes();
-	}
-	
+	RadioGroup	rg1=null;
 	//INit
 	private void initItems()
 	{
@@ -74,7 +63,23 @@ public class MainActivity extends Activity {
 		RLayCB=(RelativeLayout)findViewById(R.id.RLayCB);
 		RLayBoolean=(RelativeLayout)findViewById(R.id.RLayBoolean);
 		RLayRDI=(RelativeLayout)findViewById(R.id.RLayRDI);
+		
+		rg1=(RadioGroup)findViewById(R.id.radioGroup1);
+		
 	}
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		mtk=new TK();
+		 
+		initItems();
+		LoadItmes();
+		
+		//rg1.set
+	}
+	
 	
 	private void GetNextTi()
 	{
@@ -123,13 +128,16 @@ public class MainActivity extends Activity {
 		this.cbC.setChecked(false);
 		this.cbD.setChecked(false);
 		
-		this.rdiA.setChecked(false);
-		this.rdiB.setChecked(false);
-		this.rdiC.setChecked(false);
-		this.rdiD.setChecked(false);
+		rg1.clearCheck();
+//		this.rdiA.setChecked(false);
+//		this.rdiB.setChecked(false);
+//		this.rdiC.setChecked(false);
+//		this.rdiD.setChecked(false);
 		
+
 		this.rdiRight.setChecked(false);
 		this.rdiError.setChecked(false);
+		
 	}
 	
 	//listTi.add(new TI(1,2,"动画1中有几种违法行为？","","1","B","<p>A.?一种违法行为<br />B.?二种违法行为<br />C.?三种违法行为<br /> D.?四种违法行为<br /><br /></p>","","uploadfiles_subject3_avi1.wmv"));
