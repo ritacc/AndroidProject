@@ -29,11 +29,13 @@ public class MainActivity extends Activity {
 	CheckBox cbC=null;
 	CheckBox cbD=null;
 	
+	RadioButton rdiClear2=null;
 	RadioButton rdiA=null;
 	RadioButton rdiB=null;
 	RadioButton rdiC=null;
 	RadioButton rdiD=null;
 	
+	RadioButton rdiClear1=null;	
 	RadioButton rdiRight=null;
 	RadioButton rdiError=null;
 	
@@ -41,6 +43,7 @@ public class MainActivity extends Activity {
 	RelativeLayout RLayBoolean=null;
 	RelativeLayout RLayRDI=null;
 	RadioGroup	rg1=null;
+	RadioGroup	rg2=null;
 	//INit
 	private void initItems()
 	{
@@ -65,7 +68,7 @@ public class MainActivity extends Activity {
 		RLayRDI=(RelativeLayout)findViewById(R.id.RLayRDI);
 		
 		rg1=(RadioGroup)findViewById(R.id.radioGroup1);
-		
+		rg2=(RadioGroup)findViewById(R.id.radioGroup2);
 	}
 	
 	@Override
@@ -78,6 +81,7 @@ public class MainActivity extends Activity {
 		LoadItmes();
 		
 		//rg1.set
+		
 	}
 	
 	
@@ -121,24 +125,16 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
-	public void HeadValue()
+	public void ClearValue()
 	{
 		this.cbA.setChecked(false);
 		this.cbB.setChecked(false);
 		this.cbC.setChecked(false);
-		this.cbD.setChecked(false);
+		this.cbD.setChecked(false); 
 		
-		rg1.clearCheck();
-//		this.rdiA.setChecked(false);
-//		this.rdiB.setChecked(false);
-//		this.rdiC.setChecked(false);
-//		this.rdiD.setChecked(false);
-		
-
-		this.rdiRight.setChecked(false);
-		this.rdiError.setChecked(false);
-		
-	}
+ 		rg1.clearCheck();
+ 		rg2.clearCheck();
+ 	}
 	
 	//listTi.add(new TI(1,2,"动画1中有几种违法行为？","","1","B","<p>A.?一种违法行为<br />B.?二种违法行为<br />C.?三种违法行为<br /> D.?四种违法行为<br /><br /></p>","","uploadfiles_subject3_avi1.wmv"));
 	public void LoadItmes()
@@ -146,8 +142,8 @@ public class MainActivity extends Activity {
 		TI obj=	mtk.CurrentTi;
 		if(obj != null)
 		{ 
+			ClearValue();
 			this.txtTitle.setText( obj.ID  + ".  " + obj.IssueSubject.toString());
-			
 			//显示img
 			if(obj.ImagePath.trim().endsWith(".jpg"))
 			{
