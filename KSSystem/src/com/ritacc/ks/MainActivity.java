@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -55,10 +57,17 @@ public class MainActivity extends Activity {
 		cbC=(CheckBox)findViewById(R.id.cbC);
 		cbD=(CheckBox)findViewById(R.id.cbD);
 		
+		cbA.setOnCheckedChangeListener(cbClick);
+		cbB.setOnCheckedChangeListener(cbClick);
+		cbC.setOnCheckedChangeListener(cbClick);
+		cbD.setOnCheckedChangeListener(cbClick);
+		
 		rdiA=(RadioButton)findViewById(R.id.rdiA);
 		rdiB=(RadioButton)findViewById(R.id.rdiB);
 		rdiC=(RadioButton)findViewById(R.id.rdiC);
 		rdiD=(RadioButton)findViewById(R.id.rdiD);
+		
+		
 		
 		rdiRight=(RadioButton)findViewById(R.id.rdiRight);
 		rdiError=(RadioButton)findViewById(R.id.rdiError);
@@ -68,25 +77,195 @@ public class MainActivity extends Activity {
 		RLayRDI=(RelativeLayout)findViewById(R.id.RLayRDI);
 		
 		rg1=(RadioGroup)findViewById(R.id.radioGroup1);
+		rg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				SaveSelectVlaue();
+			}
+		});
+		
 		rg2=(RadioGroup)findViewById(R.id.radioGroup2);
+		rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				SaveSelectVlaue();
+			}
+		});
+		
 	}
+	CompoundButton.OnCheckedChangeListener cbClick=new CompoundButton.OnCheckedChangeListener()
+	{
+		@Override
+		public void onCheckedChanged(CompoundButton buttonView,
+				boolean isChecked) {
+			// TODO Auto-generated method stub
+			SaveSelectVlaue();
+		}		
+	};
+ 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mtk=new TK();
-		 
+		
 		initItems();
 		LoadItmes();
-		
-		//rg1.set
+	}
+	
+	private void LoadDefultValue()
+	{
+		TI obj=	mtk.CurrentTi;
+		if(obj != null)
+		{
+			if(obj.EIssueResult != "")
+			{
+				if(obj.IssueType_ID=="0"){
+					if(obj.EIssueResult=="√")
+					{
+						this.rdiRight.setChecked(true);
+					}
+					else
+					{
+						this.rdiError.setChecked(true);
+					}
+				}
+				else if(obj.IssueType_ID=="1"){
+					if(obj.EIssueResult=="A")
+					{
+						this.rdiA.setChecked(true);
+					}
+					else if(obj.EIssueResult=="B")
+					{
+						this.rdiB.setChecked(true);
+					}
+					else if(obj.EIssueResult=="C")
+					{
+						this.rdiC.setChecked(true);
+					}
+					else if(obj.EIssueResult=="D")
+					{
+						this.rdiD.setChecked(true);
+					}
+				}
+				else if(obj.IssueType_ID=="2"){
+					String[] strArr=obj.EIssueResult.split(",");
+					for(String str : strArr)
+					{
+						if(str=="A")
+						{
+							this.cbA.setChecked(true);
+						}
+						else if(str=="B")
+						{
+							this.cbB.setChecked(true);
+						}
+						else if(str=="C")
+						{
+							this.cbC.setChecked(true);
+						}
+						else if(str=="D")
+						{
+							this.cbD.setChecked(true);
+						}
+					}
+				}
+			}
+		}
 		
 	}
 	
+	private void SaveSelectVlaue()
+	{
+		String Result="";
+		TI obj=	mtk.CurrentTi;
+		if(obj != null)
+		{
+			if(obj.IssueType_ID=="0"){
+				if(this.rdiRight.isChecked())
+				{
+					Result="√";
+				}
+				else if(this.rdiError.isChecked())
+				{
+					Result="×"; 
+				}
+			}
+			else if(obj.IssueType_ID=="1"){
+				if(this.rdiA.isChecked())
+				{
+					Result="A";
+				}
+				else if(this.rdiB.isChecked())
+				{
+					Result="B";
+				}
+				else if(this.rdiC.isChecked())
+				{
+					Result="C";
+				}
+				else if(this.rdiD.isChecked())
+				{
+					Result="D";
+				}
+			}
+			else if(obj.IssueType_ID=="2"){
+				String multResult="";
+				if(this.cbA.isChecked())
+				{
+					multResult="A,";
+				}
+				else if(this.cbA.isChecked())
+				{
+					multResult+="B,";
+				}
+				else if(this.cbA.isChecked())
+				{
+					multResult+="C,";
+				}
+				else if(this.cbA.isChecked())
+				{
+					multResult+="D";
+				}
+				if(multResult.endsWith(","))
+				{
+					multResult=multResult.substring(0, multResult.length()-1);
+				}
+				Result=multResult;
+			}
+			mtk.CurrentTi.EIssueResult=Result;
+			
+			if(obj.IssueType_ID=="0" || obj.IssueType_ID=="1")
+			{
+				if(mtk.CurrentTi.EIssueResult !="")
+				{
+					//判断是否正确
+					if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+					{
+						Toast.makeText(MainActivity.this,"回答正确。", 8000).show();
+					}
+					else
+					{
+						Toast.makeText(MainActivity.this,"回答错误,正确答案是："+ mtk.CurrentTi.Answer, 8000).show();
+					}
+				}
+			}
+			if(obj.IssueType_ID=="2")
+			{
+				if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+				{
+					Toast.makeText(MainActivity.this,"回答正确。", 8000).show();
+				}				
+			}
+		}//if(obj != null)
+	}
 	
 	private void GetNextTi()
 	{
+		//SaveSelectVlaue();
 		if(this.mtk.GetNextTi())
 		{
 			LoadItmes();
@@ -94,6 +273,7 @@ public class MainActivity extends Activity {
 	}
 	private void GetPrevTi()
 	{
+		//SaveSelectVlaue();
 		if(this.mtk.GetPrevTi())
 		{
 			LoadItmes();
@@ -210,11 +390,9 @@ public class MainActivity extends Activity {
 					}
 				}
 			}
-			
-		}
-		
-		//obj.i
-		
+			//加载默认值
+			LoadDefultValue();
+		}// end if(obj != null)
 	}
 
 	
@@ -233,11 +411,11 @@ public class MainActivity extends Activity {
 			case MotionEvent.ACTION_MOVE:
 				break;
 			case MotionEvent.ACTION_UP:
-				 if(x-dx>30)
+				 if((x-dx)*-1 >30)
 				 {
 					 GetNextTi();
 				 }
-				 if((x-dx)*-1 > 30)
+				 if((x-dx) > 30)
 				 {
 					 this.GetPrevTi();
 				 }

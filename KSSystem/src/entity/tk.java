@@ -4,10 +4,7 @@ import java.util.ArrayList;
 
 public class TK {
 	
-		private ArrayList listTi=new ArrayList();
-		
-	 
-		@SuppressWarnings("unchecked")
+		private ArrayList<TI> listTi=new ArrayList<TI>();
 		public TK()
 		{
 			listTi.add(new TI(1,2,"动画1中有几种违法行为？","","1","B","A.一种违法行为B.二种违法行为C.三种违法行为 D.四种违法行为","","uploadfiles_subject3_avi1.wmv"));
@@ -837,7 +834,7 @@ public class TK {
 		}
 		
 		//当前序号
-		public int CurrentIndex=12;
+		private int CurrentIndex=12;
 		
 		public String ErrorMsg="";
 		//题数量

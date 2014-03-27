@@ -10,13 +10,20 @@ public class TI {
 	public String IssueSubject ;
 	
 	public String EIssueSubject ;
-	//"2"
+
+	/**
+     *  0:判断题	1: 单选题		2: 多选择
+     */
 	public String IssueType_ID ;
 	//"A,B,D"
 	public String Answer ;
-	//<p>A.?醉酒驾驶<br />B.?超速驾驶<br />C.?疲劳驾驶<br /> D.?肇事逃逸
+	
+	/**
+	 * <p>A.?醉酒驾驶<br />B.?超速驾驶<br />C.?疲劳驾驶<br /> D.?肇事逃逸
+	 */
 	public String IssueResult ;
 	
+	//回签结果
 	public String EIssueResult ;
 	
 	public String ImagePath ;
