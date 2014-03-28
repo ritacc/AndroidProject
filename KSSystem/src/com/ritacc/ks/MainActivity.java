@@ -11,7 +11,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -81,7 +80,10 @@ public class MainActivity extends Activity {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				// TODO Auto-generated method stub
-				SaveSelectVlaue();
+				if(IsSaveValue)
+				{
+					SaveSelectVlaue();
+				}
 			}
 		});
 		
@@ -90,7 +92,10 @@ public class MainActivity extends Activity {
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				// TODO Auto-generated method stub
-				SaveSelectVlaue();
+				if(IsSaveValue)
+				{
+					SaveSelectVlaue();
+				}
 			}
 		});
 		
@@ -101,11 +106,14 @@ public class MainActivity extends Activity {
 		public void onCheckedChanged(CompoundButton buttonView,
 				boolean isChecked) {
 			// TODO Auto-generated method stub
-			SaveSelectVlaue();
+			if(IsSaveValue)
+			{
+				SaveSelectVlaue();
+			}
 		}		
 	};
  
-	
+	boolean IsSaveValue=false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -119,8 +127,10 @@ public class MainActivity extends Activity {
 	private void LoadDefultValue()
 	{
 		TI obj=	mtk.CurrentTi;
+		Log.d("LoadDefultValue ","加载默认值。");
 		if(obj != null)
 		{
+			Log.d("LoadDefultValue ",obj.EIssueResult);
 			if(obj.EIssueResult != "")
 			{
 				if(obj.IssueType_ID=="0"){
@@ -236,29 +246,32 @@ public class MainActivity extends Activity {
 				}
 				Result=multResult;
 			}
-			mtk.CurrentTi.EIssueResult=Result;
-			
-			if(obj.IssueType_ID=="0" || obj.IssueType_ID=="1")
+			if(Result !="")
 			{
-				if(mtk.CurrentTi.EIssueResult !="")
+				mtk.CurrentTi.EIssueResult=Result;
+				
+				if(obj.IssueType_ID=="0" || obj.IssueType_ID=="1")
 				{
-					//判断是否正确
-					if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+					if(mtk.CurrentTi.EIssueResult !="")
 					{
-						Toast.makeText(MainActivity.this,"回答正确。", 8000).show();
-					}
-					else
-					{
-						Toast.makeText(MainActivity.this,"回答错误,正确答案是："+ mtk.CurrentTi.Answer, 8000).show();
+						//判断是否正确
+						if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+						{
+							Toast.makeText(MainActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
+						}
+						else
+						{
+							Toast.makeText(MainActivity.this,"回答错误,正确答案是："+ mtk.CurrentTi.Answer, Toast.LENGTH_LONG).show();
+						}
 					}
 				}
-			}
-			if(obj.IssueType_ID=="2")
-			{
-				if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+				if(obj.IssueType_ID=="2")
 				{
-					Toast.makeText(MainActivity.this,"回答正确。", 8000).show();
-				}				
+					if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+					{
+						Toast.makeText(MainActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
+					}				
+				}
 			}
 		}//if(obj != null)
 	}
@@ -319,6 +332,7 @@ public class MainActivity extends Activity {
 	//listTi.add(new TI(1,2,"动画1中有几种违法行为？","","1","B","<p>A.?一种违法行为<br />B.?二种违法行为<br />C.?三种违法行为<br /> D.?四种违法行为<br /><br /></p>","","uploadfiles_subject3_avi1.wmv"));
 	public void LoadItmes()
 	{
+		IsSaveValue=false;
 		TI obj=	mtk.CurrentTi;
 		if(obj != null)
 		{ 
@@ -391,8 +405,10 @@ public class MainActivity extends Activity {
 				}
 			}
 			//加载默认值
+			
 			LoadDefultValue();
 		}// end if(obj != null)
+		IsSaveValue=true;
 	}
 
 	
