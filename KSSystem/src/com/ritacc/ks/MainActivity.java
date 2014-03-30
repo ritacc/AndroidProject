@@ -113,6 +113,9 @@ public class MainActivity extends Activity {
 		}		
 	};
  
+	/**
+	 * 是否保存值
+	 */
 	boolean IsSaveValue=false;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -228,24 +231,28 @@ public class MainActivity extends Activity {
 				{
 					multResult="A,";
 				}
-				else if(this.cbA.isChecked())
+				
+				if(this.cbB.isChecked())
 				{
 					multResult+="B,";
 				}
-				else if(this.cbA.isChecked())
+				if(this.cbC.isChecked())
 				{
 					multResult+="C,";
 				}
-				else if(this.cbA.isChecked())
+				if(this.cbD.isChecked())
 				{
 					multResult+="D";
 				}
+				
 				if(multResult.endsWith(","))
 				{
 					multResult=multResult.substring(0, multResult.length()-1);
 				}
 				Result=multResult;
+				Log.e("Checked Reslut:", Result);
 			}
+			
 			if(Result !="")
 			{
 				mtk.CurrentTi.EIssueResult=Result;
@@ -265,10 +272,12 @@ public class MainActivity extends Activity {
 						}
 					}
 				}
+				Log.e("Checked Reslut2:", Result);
 				if(obj.IssueType_ID=="2")
 				{
 					if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
 					{
+						Log.e("Checked Reslut3:", mtk.CurrentTi.EIssueResult);
 						Toast.makeText(MainActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
 					}				
 				}
@@ -404,8 +413,8 @@ public class MainActivity extends Activity {
 					}
 				}
 			}
-			//加载默认值
 			
+			//加载默认值			
 			LoadDefultValue();
 		}// end if(obj != null)
 		IsSaveValue=true;
