@@ -834,13 +834,31 @@ public class TK {
 		}
 		
 		//当前序号
-		private int CurrentIndex=12;
+		private int CurrentIndex=20;
+		
 		
 		public String ErrorMsg="";
 		//题数量
 		public int TiCount=0;
 		
 		public TI CurrentTi;
+		
+		public boolean setCurrentIndex(int mIndex)
+		{
+			
+			if(mIndex> 0 && listTi.size() > mIndex)
+			{
+				CurrentIndex=mIndex;
+				CurrentTi=(TI)listTi.get(mIndex);
+				return true;
+			}
+			return false;
+		}
+		public int getCurrentIndex()
+		{
+			return CurrentIndex;
+		}
+		
 		public boolean GetNextTi()
 		{
 			int iTemp=this.CurrentIndex+1;
@@ -849,7 +867,6 @@ public class TK {
 				ErrorMsg="已经是最后一题啦。";
 				return false;
 			}
-			
 			CurrentTi=(TI)listTi.get(iTemp);
 			CurrentIndex=iTemp;
 			return true;

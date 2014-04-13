@@ -1,17 +1,25 @@
 package com.ritacc.ks;
- 
+
 import entity.TI;
 import entity.TK; 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -48,6 +56,7 @@ public class MainActivity extends Activity {
 	//INit
 	private void initItems()
 	{
+		//getSharedPreferences("",Context.MODE_WORLD_READABLE )
 		txtTitle=(TextView)findViewById(R.id.txtTitle);
 		imgItems=(ImageView)findViewById(R.id.imgItems);
 		
@@ -66,7 +75,7 @@ public class MainActivity extends Activity {
 		rdiC=(RadioButton)findViewById(R.id.rdiC);
 		rdiD=(RadioButton)findViewById(R.id.rdiD);
 		
-		
+		 
 		
 		rdiRight=(RadioButton)findViewById(R.id.rdiRight);
 		rdiError=(RadioButton)findViewById(R.id.rdiError);
@@ -122,9 +131,59 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mtk=new TK();
+		ReadTkIndex();
 		
 		initItems();
 		LoadItmes();
+	}
+	
+	public void ReadTkIndex()
+	{
+		SharedPreferences mPrewf=getSharedPreferences("kssystem",MODE_WORLD_READABLE);		
+		int CureentIndex= mPrewf.getInt("CureentIndex", 0);
+		mtk.setCurrentIndex(CureentIndex);
+	}
+	
+	public void SaveCurrentIndex()
+	{
+		SharedPreferences mPrewf=getSharedPreferences("kssystem",MODE_WORLD_WRITEABLE );
+		SharedPreferences.Editor mReader=mPrewf.edit();
+		mReader.putInt("CureentIndex", mtk.getCurrentIndex());
+		mReader.commit();
+	}
+	
+	EditText txtWord;
+	public void ChangeCureentIndex()
+	{
+		Builder dialog = new AlertDialog.Builder(this);
+		LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		LinearLayout layout = (LinearLayout)inflater.inflate(R.layout.input_cureent_index, null);
+		   
+		txtWord=(EditText)layout.findViewById(R.id.txtWorld);
+		dialog.setTitle("请输入")
+		.setIcon(android.R.drawable.ic_dialog_info)
+        .setView(layout)
+        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				String str=txtWord.getText().toString();
+				if(!str.isEmpty())
+				{
+					int Index=Integer.parseInt(str);
+					Log.e("ddd", Index + " ");
+					if(Index > 0 && mtk.setCurrentIndex(Index))
+					{
+						LoadItmes();
+					}
+					else
+					{
+						Toast.makeText(MainActivity.this,str+ " 无效!", Toast.LENGTH_LONG).show();
+					}
+				}
+			}
+		})
+        .setNegativeButton("取消", null);
+		dialog.show();
 	}
 	
 	private void LoadDefultValue()
@@ -194,10 +253,10 @@ public class MainActivity extends Activity {
 	private void SaveSelectVlaue()
 	{
 		String Result="";
-		TI obj=	mtk.CurrentTi;
-		if(obj != null)
+		//TI obj=	mtk.CurrentTi;
+		if(mtk.CurrentTi != null)
 		{
-			if(obj.IssueType_ID=="0"){
+			if(mtk.CurrentTi.IssueType_ID=="0"){
 				if(this.rdiRight.isChecked())
 				{
 					Result="√";
@@ -207,7 +266,7 @@ public class MainActivity extends Activity {
 					Result="×"; 
 				}
 			}
-			else if(obj.IssueType_ID=="1"){
+			else if(mtk.CurrentTi.IssueType_ID=="1"){
 				if(this.rdiA.isChecked())
 				{
 					Result="A";
@@ -225,7 +284,7 @@ public class MainActivity extends Activity {
 					Result="D";
 				}
 			}
-			else if(obj.IssueType_ID=="2"){
+			else if(mtk.CurrentTi.IssueType_ID=="2"){
 				String multResult="";
 				if(this.cbA.isChecked())
 				{
@@ -256,8 +315,7 @@ public class MainActivity extends Activity {
 			if(Result !="")
 			{
 				mtk.CurrentTi.EIssueResult=Result;
-				
-				if(obj.IssueType_ID=="0" || obj.IssueType_ID=="1")
+				if(mtk.CurrentTi.IssueType_ID=="0" || mtk.CurrentTi.IssueType_ID=="1")
 				{
 					if(mtk.CurrentTi.EIssueResult !="")
 					{
@@ -272,14 +330,12 @@ public class MainActivity extends Activity {
 						}
 					}
 				}
-				Log.e("Checked Reslut2:", Result);
-				if(obj.IssueType_ID=="2")
+				else if(mtk.CurrentTi.IssueType_ID=="2")
 				{
-					if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+					if( mtk.CurrentTi.EIssueResult.equals(mtk.CurrentTi.Answer))
 					{
-						Log.e("Checked Reslut3:", mtk.CurrentTi.EIssueResult);
 						Toast.makeText(MainActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
-					}				
+					}
 				}
 			}
 		}//if(obj != null)
@@ -291,6 +347,7 @@ public class MainActivity extends Activity {
 		if(this.mtk.GetNextTi())
 		{
 			LoadItmes();
+			SaveCurrentIndex();
 		}
 	}
 	private void GetPrevTi()
@@ -299,6 +356,7 @@ public class MainActivity extends Activity {
 		if(this.mtk.GetPrevTi())
 		{
 			LoadItmes();
+			SaveCurrentIndex();
 		}
 	}
 	
@@ -315,6 +373,9 @@ public class MainActivity extends Activity {
 				break;
 			case R.id.menu_get_anser:
 				Toast.makeText(MainActivity.this,mtk.CurrentTi.Answer, 8000).show();
+				break;
+			case R.id.menu_jump:
+				ChangeCureentIndex();
 				break;
 		}
 		return super.onOptionsItemSelected(item);
@@ -338,7 +399,7 @@ public class MainActivity extends Activity {
  		rg2.clearCheck();
  	}
 	
-	//listTi.add(new TI(1,2,"动画1中有几种违法行为？","","1","B","<p>A.?一种违法行为<br />B.?二种违法行为<br />C.?三种违法行为<br /> D.?四种违法行为<br /><br /></p>","","uploadfiles_subject3_avi1.wmv"));
+	
 	public void LoadItmes()
 	{
 		IsSaveValue=false;
@@ -352,7 +413,6 @@ public class MainActivity extends Activity {
 			{
 				Log.d("ErrorMsg ","处理图片.");
 				imgItems.setVisibility(View.VISIBLE);
-				//imgItems.setImageResource(R.drawable.uploadfiles_subject3_img124);
 				int resID = getResources().getIdentifier(obj.ImagePath.replace(".jpg", ""), "drawable", "com.ritacc.ks");
 				imgItems.setImageResource(resID);
 			}
@@ -448,8 +508,5 @@ public class MainActivity extends Activity {
 		}
 		return true; 
 	}
-	
-	 
-	
 	
 }

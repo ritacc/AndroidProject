@@ -7,21 +7,28 @@
         android:title="@string/action_settings"/>
     
     <item
+        android:id="@+id/menu_jump"
+        android:orderInCategory="80"
+        android:icon="@drawable/ic_jump"
+        android:showAsAction="always"
+        android:title="@string/menu_discard"/>
+    
+    <item
         android:id="@+id/menu_get_anser"
         android:orderInCategory="80"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_answer"
         android:showAsAction="always"
         android:title="@string/menu_discard"/>
 	<item
         android:id="@+id/menu_Prev_ti"
         android:orderInCategory="90"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_left"
         android:showAsAction="always"
         android:title="@string/menu_discard"/>
     <item
         android:id="@+id/menu_next_ti"
         android:orderInCategory="100"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_right"
         android:showAsAction="always"
         android:title="@string/menu_discard"/>
 
