@@ -41,4 +41,8 @@ public class TI {
 		EIssueResult=_EIssueResult;
 		ImagePath=_ImagePath;
 	}
+	public TI()
+	{
+		
+	}
 }

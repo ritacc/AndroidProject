@@ -130,9 +130,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mtk=new TK();
-		ReadTkIndex();
+		mtk=new TK(this);
 		
+		ReadTkIndex();
+
 		initItems();
 		LoadItmes();
 	}
@@ -167,7 +168,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				String str=txtWord.getText().toString();
-				if(!str.isEmpty())
+				if(!str.equals(""))
 				{
 					int Index=Integer.parseInt(str);
 					Log.e("ddd", Index + " ");
@@ -404,6 +405,20 @@ public class MainActivity extends Activity {
 	{
 		IsSaveValue=false;
 		TI obj=	mtk.CurrentTi;
+		 
+		Log.e("obj.subjectType=", obj.subjectType +"");
+		Log.e("obj.IssueSubject", obj.IssueSubject);
+		
+		Log.e("obj.EIssueSubject=", obj.EIssueSubject);
+		Log.e("obj.IssueType_ID=", obj.IssueType_ID);
+		Log.e("obj.Answer=", obj.Answer);
+		
+		Log.e("obj.IssueResult=", obj.IssueResult);
+		Log.e("obj.EIssueResult=", obj.EIssueResult);
+		Log.e("obj.ImagePath=", obj.ImagePath);
+		
+		 
+		
 		if(obj != null)
 		{ 
 			ClearValue();

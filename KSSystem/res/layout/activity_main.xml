@@ -16,10 +16,11 @@
 
     <ImageView
         android:id="@+id/imgItems"
-        android:layout_width="315dp"
-        android:layout_height="187dp"
+        android:layout_width="350dp"
+        android:layout_height="210dp"
         android:layout_below="@+id/txtTitle"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/ic_launcher"         
+        />
     
     <RelativeLayout 
 	    android:id="@+id/RLayBoolean"
