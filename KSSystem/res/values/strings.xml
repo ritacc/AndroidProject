@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">科目四考试题</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_errorredo">错题炼习</string>
+    <string name="action_resetresult">重置答案</string>
+    <string name="menu_discard">跳转</string>
+    
     <string name="hello_world"></string>
-	<string name="menu_discard">discard</string>
-	
 	<string name="right">√</string>
 	<string name="error">×</string>
 </resources>

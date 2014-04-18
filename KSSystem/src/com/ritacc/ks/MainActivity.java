@@ -9,6 +9,7 @@ import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -130,10 +131,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		mtk=new TK(this);
-		
+		mtk=new TK(this);		
 		ReadTkIndex();
-
 		initItems();
 		LoadItmes();
 	}
@@ -147,6 +146,10 @@ public class MainActivity extends Activity {
 	
 	public void SaveCurrentIndex()
 	{
+		if(mtk.TMode.equals("Error"))
+		{
+			return;
+		}
 		SharedPreferences mPrewf=getSharedPreferences("kssystem",MODE_WORLD_WRITEABLE );
 		SharedPreferences.Editor mReader=mPrewf.edit();
 		mReader.putInt("CureentIndex", mtk.getCurrentIndex());
@@ -190,13 +193,24 @@ public class MainActivity extends Activity {
 	private void LoadDefultValue()
 	{
 		TI obj=	mtk.CurrentTi;
-		Log.d("LoadDefultValue ","加载默认值。");
+		this.txtTitle.setTextColor(Color.BLACK);
 		if(obj != null)
 		{
-			Log.d("LoadDefultValue ",obj.EIssueResult);
-			if(obj.EIssueResult != "")
+			Log.e("Answer + EIssueResult", obj.Answer + "  EIssueResult=" + obj.EIssueResult);
+			 
+			
+			if(!obj.EIssueResult.equals(""))
 			{
-				if(obj.IssueType_ID=="0"){
+				if(obj.Answer.equals(obj.EIssueResult))
+				{
+					this.txtTitle.setTextColor(Color.BLACK);
+				}
+				else
+				{
+					this.txtTitle.setTextColor(Color.RED);
+				}
+				
+				if(obj.IssueType_ID.equals("0")){
 					if(obj.EIssueResult=="√")
 					{
 						this.rdiRight.setChecked(true);
@@ -206,7 +220,7 @@ public class MainActivity extends Activity {
 						this.rdiError.setChecked(true);
 					}
 				}
-				else if(obj.IssueType_ID=="1"){
+				else if(obj.IssueType_ID.equals("1")){
 					if(obj.EIssueResult=="A")
 					{
 						this.rdiA.setChecked(true);
@@ -224,23 +238,23 @@ public class MainActivity extends Activity {
 						this.rdiD.setChecked(true);
 					}
 				}
-				else if(obj.IssueType_ID=="2"){
+				else if(obj.IssueType_ID.equals("2")){
 					String[] strArr=obj.EIssueResult.split(",");
 					for(String str : strArr)
 					{
-						if(str=="A")
+						if(str.equals("A"))
 						{
 							this.cbA.setChecked(true);
 						}
-						else if(str=="B")
+						else if(str.equals("B"))
 						{
 							this.cbB.setChecked(true);
 						}
-						else if(str=="C")
+						else if(str.equals("C"))
 						{
 							this.cbC.setChecked(true);
 						}
-						else if(str=="D")
+						else if(str.equals("D"))
 						{
 							this.cbD.setChecked(true);
 						}
@@ -257,7 +271,7 @@ public class MainActivity extends Activity {
 		//TI obj=	mtk.CurrentTi;
 		if(mtk.CurrentTi != null)
 		{
-			if(mtk.CurrentTi.IssueType_ID=="0"){
+			if(mtk.CurrentTi.IssueType_ID.equals("0")){
 				if(this.rdiRight.isChecked())
 				{
 					Result="√";
@@ -267,7 +281,7 @@ public class MainActivity extends Activity {
 					Result="×"; 
 				}
 			}
-			else if(mtk.CurrentTi.IssueType_ID=="1"){
+			else if(mtk.CurrentTi.IssueType_ID.equals("1")){
 				if(this.rdiA.isChecked())
 				{
 					Result="A";
@@ -285,7 +299,7 @@ public class MainActivity extends Activity {
 					Result="D";
 				}
 			}
-			else if(mtk.CurrentTi.IssueType_ID=="2"){
+			else if(mtk.CurrentTi.IssueType_ID.equals("2")){
 				String multResult="";
 				if(this.cbA.isChecked())
 				{
@@ -316,12 +330,12 @@ public class MainActivity extends Activity {
 			if(Result !="")
 			{
 				mtk.CurrentTi.EIssueResult=Result;
-				if(mtk.CurrentTi.IssueType_ID=="0" || mtk.CurrentTi.IssueType_ID=="1")
+				if(mtk.CurrentTi.IssueType_ID.equals("0") || mtk.CurrentTi.IssueType_ID.equals("1"))
 				{
 					if(mtk.CurrentTi.EIssueResult !="")
 					{
 						//判断是否正确
-						if(mtk.CurrentTi.EIssueResult==mtk.CurrentTi.Answer)
+						if(mtk.CurrentTi.EIssueResult.equals(mtk.CurrentTi.Answer))
 						{
 							Toast.makeText(MainActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
 						}
@@ -331,7 +345,7 @@ public class MainActivity extends Activity {
 						}
 					}
 				}
-				else if(mtk.CurrentTi.IssueType_ID=="2")
+				else if(mtk.CurrentTi.IssueType_ID.equals("2"))
 				{
 					if( mtk.CurrentTi.EIssueResult.equals(mtk.CurrentTi.Answer))
 					{
@@ -378,6 +392,24 @@ public class MainActivity extends Activity {
 			case R.id.menu_jump:
 				ChangeCureentIndex();
 				break;
+			case R.id.action_resetresult:
+				if(mtk.ClearResult())
+				{
+					Toast.makeText(MainActivity.this,"操作完成。", Toast.LENGTH_LONG).show();
+					//加载默认值
+					LoadDefultValue();
+				}
+				break;
+			case R.id.action_errorredo:
+				if(mtk.ErrorRedo())
+				{
+					LoadDefultValue();
+				}
+				else
+				{
+					Toast.makeText(MainActivity.this,"没有错题。", Toast.LENGTH_LONG).show();
+				}
+				break;
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -405,19 +437,6 @@ public class MainActivity extends Activity {
 	{
 		IsSaveValue=false;
 		TI obj=	mtk.CurrentTi;
-		 
-		Log.e("obj.subjectType=", obj.subjectType +"");
-		Log.e("obj.IssueSubject", obj.IssueSubject);
-		
-		Log.e("obj.EIssueSubject=", obj.EIssueSubject);
-		Log.e("obj.IssueType_ID=", obj.IssueType_ID);
-		Log.e("obj.Answer=", obj.Answer);
-		
-		Log.e("obj.IssueResult=", obj.IssueResult);
-		Log.e("obj.EIssueResult=", obj.EIssueResult);
-		Log.e("obj.ImagePath=", obj.ImagePath);
-		
-		 
 		
 		if(obj != null)
 		{ 
@@ -426,14 +445,12 @@ public class MainActivity extends Activity {
 			//显示img
 			if(obj.ImagePath.trim().endsWith(".jpg"))
 			{
-				Log.d("ErrorMsg ","处理图片.");
 				imgItems.setVisibility(View.VISIBLE);
 				int resID = getResources().getIdentifier(obj.ImagePath.replace(".jpg", ""), "drawable", "com.ritacc.ks");
 				imgItems.setImageResource(resID);
 			}
 			else
 			{
-				Log.d("ErrorMsg ","隐藏图片."); 
 				imgItems.setVisibility(View.GONE);
 			}
 			
@@ -441,13 +458,12 @@ public class MainActivity extends Activity {
 			RLayBoolean.setVisibility(View.GONE);
 			RLayRDI.setVisibility(View.GONE);
 			
-			if(obj.IssueType_ID=="0")//判断
+			if(obj.IssueType_ID.equals("0"))//判断
 			{
 				RLayBoolean.setVisibility(View.VISIBLE);
 			}
-			else if(obj.IssueType_ID=="1" || obj.IssueType_ID=="2")//单选 ,2多选
-			{
-				 
+			else if(obj.IssueType_ID.equals("1") || obj.IssueType_ID.equals("2"))//单选 ,2多选
+			{				 
 				if(obj.IssueResult.length()> 2)
 				{
 					try
@@ -464,7 +480,7 @@ public class MainActivity extends Activity {
 							String strC=obj.IssueResult.substring(Cindex, Dindex);
 							String strD=obj.IssueResult.substring(Dindex);
 							
-							if(obj.IssueType_ID=="1")//单选 
+							if(obj.IssueType_ID.equals("1"))//单选 
 							{
 								RLayRDI.setVisibility(View.VISIBLE);
 								rdiA.setText(strA);
@@ -472,7 +488,7 @@ public class MainActivity extends Activity {
 								rdiC.setText(strC);
 								rdiD.setText(strD);
 							}
-							else if(obj.IssueType_ID=="2")//多选
+							else if(obj.IssueType_ID.equals("2"))//多选
 							{
 								RLayCB.setVisibility(View.VISIBLE);
 								cbA.setText(strA);

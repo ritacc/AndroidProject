@@ -8,43 +8,68 @@ import android.util.Log;
 
  
 import com.ritacc.ks.db.MyDatabaseHelper;
+import com.ritacc.ks.db.TiDA;
 
  
 
 public class TK {
 	
 		private ArrayList<TI> listTi=new ArrayList<TI>();
-		MyDatabaseHelper dbHelper;
-		
+		 
+		TiDA mda;
 		public TK(Context context)
 		{
-			dbHelper= new MyDatabaseHelper(context,"kssystem.db",1);
-			Cursor cursor=dbHelper.getReadableDatabase().rawQuery(
-					"select * from TI ",null);
-			
-			Log.d("count=", cursor.getCount() +"");
-			
-			while(cursor.moveToNext())
-			{
-				TI obj=new TI();
-				obj.ID= cursor.getInt(0);
-				obj.subjectType= cursor.getInt(1);
-				obj.IssueSubject= cursor.getString(2);
-				obj.EIssueSubject= cursor.getString(3);
-				obj.IssueType_ID= cursor.getString(4);
-				obj.Answer= cursor.getString(5);
-				obj.IssueResult= cursor.getString(6);
-				obj.EIssueResult= cursor.getString(7);
-				obj.ImagePath= cursor.getString(8);
-				listTi.add(obj);
-			}
-			
+			mda=new TiDA(new MyDatabaseHelper(context,"kssystem.db",1));
+			listTi=mda.GetAllTi();
 			TiCount=listTi.size();
 			if(CurrentIndex> 0 && listTi.size() > CurrentIndex)
 			{
 				CurrentTi=(TI)listTi.get(CurrentIndex);
 			}
 		}
+		/**
+		 Error ,Normal
+		 */
+		public String TMode="Normal";
+		public boolean ErrorRedo()
+		{
+			listTi.clear();
+			listTi=mda.GetErrorTi();
+			TiCount=listTi.size();
+			if(TiCount == 0){
+				return false;
+			}
+
+			TMode="Error";
+			CurrentIndex=0;
+			CurrentTi=(TI)listTi.get(CurrentIndex);
+			return true;
+		}
+		
+		/***
+		 * 保存选择结果。
+		 * @return
+		 */
+		private boolean SaveTiResult()
+		{
+			if(CurrentTi == null)
+				return false;
+			return	mda.SaveResult(CurrentTi);		
+		}
+		
+		public boolean ClearResult()
+		{ 
+			if(	mda.ClearResult())
+			{
+				for(TI obj : listTi)
+				{
+					obj.EIssueResult="";
+				}
+				return true;
+			}
+			return false;
+		}
+		
 		//获取。
 		public Boolean GetTI()
 		{
@@ -80,6 +105,7 @@ public class TK {
 		
 		public boolean GetNextTi()
 		{
+			SaveTiResult();
 			int iTemp=this.CurrentIndex+1;
 			if(iTemp>=TiCount)
 			{
@@ -94,6 +120,7 @@ public class TK {
 		//获取上一题
 		public boolean GetPrevTi()
 		{
+			SaveTiResult();
 			int iTemp=this.CurrentIndex-1;
 			if(iTemp<0)
 			{
