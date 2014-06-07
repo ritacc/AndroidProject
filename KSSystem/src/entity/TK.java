@@ -15,14 +15,30 @@ import com.ritacc.ks.db.TiDA;
 public class TK {
 	
 		private ArrayList<TI> listTi=new ArrayList<TI>();
-		 
+		/**
+		 * 题模式 
+		 */
+		public int CureentTKMode =0;
 		TiDA mda;
 		public TK(Context context)
 		{
 			mda=new TiDA(new MyDatabaseHelper(context,"kssystem.db",1));
 			listTi=mda.GetAllTi();
 			TiCount=listTi.size();
-			if(CurrentIndex> 0 && listTi.size() > CurrentIndex)
+			if(CurrentIndex>= 0 && listTi.size() > CurrentIndex)
+			{
+				CurrentTi=(TI)listTi.get(CurrentIndex);
+			}
+		}
+		public TK(Context context,int ModeType )
+		{
+			CureentTKMode=1;
+			
+			mda=new TiDA(new MyDatabaseHelper(context,"kssystem.db",1));
+			listTi=mda.GetErrorTi();
+			TiCount=listTi.size();
+			CurrentIndex=0;
+			if(CurrentIndex>= 0 && listTi.size() > CurrentIndex)
 			{
 				CurrentTi=(TI)listTi.get(CurrentIndex);
 			}
@@ -54,7 +70,29 @@ public class TK {
 		{
 			if(CurrentTi == null)
 				return false;
-			return	mda.SaveResult(CurrentTi);		
+			if(CureentTKMode== 0)
+			{
+				return	mda.SaveResult(CurrentTi);
+			}
+			else
+			{
+				if(CurrentTi.EIssueResult.equals(CurrentTi.Answer))
+				{
+					if(CurrentTi.RightNum== 0)
+					{
+						CurrentTi.RightNum=CurrentTi.RightNum+1;
+						return	mda.SaveResultRightNum(CurrentTi);
+					}
+					else
+					{
+						return	mda.SaveResult(CurrentTi);
+					}
+				}
+				else
+				{
+					return	mda.SaveResult(CurrentTi);
+				}
+			}
 		}
 		
 		public boolean ClearResult()
@@ -78,8 +116,7 @@ public class TK {
 		}
 		
 		//当前序号
-		private int CurrentIndex=20;
-		
+		private int CurrentIndex=0;
 		
 		public String ErrorMsg="";
 		//题数量

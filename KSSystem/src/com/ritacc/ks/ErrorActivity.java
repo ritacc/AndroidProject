@@ -1,23 +1,18 @@
 package com.ritacc.ks;
 
-import entity.TI;
-import entity.TK;
- 
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
- 
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -29,8 +24,10 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import entity.TI;
+import entity.TK;
 
-public class MainActivity extends Activity {
+public class ErrorActivity extends Activity {
 
 	private TK mtk;
 	private TextView txtTitle=null;
@@ -135,30 +132,12 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	
-		mtk=new TK(this);		
-		ReadTkIndex();
+		mtk=new TK(this,1);		
 		initItems();
 		LoadItmes();
 	}
 	
-	public void ReadTkIndex()
-	{
-		SharedPreferences mPrewf=getSharedPreferences("kssystem",MODE_WORLD_READABLE);		
-		int CureentIndex= mPrewf.getInt("CureentIndex", 0);
-		mtk.setCurrentIndex(CureentIndex);
-	}
 	
-	public void SaveCurrentIndex()
-	{
-		if(mtk.TMode.equals("Error"))
-		{
-			return;
-		}
-		SharedPreferences mPrewf=getSharedPreferences("kssystem",MODE_WORLD_WRITEABLE );
-		SharedPreferences.Editor mReader=mPrewf.edit();
-		mReader.putInt("CureentIndex", mtk.getCurrentIndex());
-		mReader.commit();
-	}
 	
 	EditText txtWord;
 	public void ChangeCureentIndex()
@@ -185,7 +164,7 @@ public class MainActivity extends Activity {
 					}
 					else
 					{
-						Toast.makeText(MainActivity.this,str+ " 无效!", Toast.LENGTH_LONG).show();
+						Toast.makeText(ErrorActivity.this,str+ " 无效!", Toast.LENGTH_LONG).show();
 					}
 				}
 			}
@@ -341,11 +320,11 @@ public class MainActivity extends Activity {
 						//判断是否正确
 						if(mtk.CurrentTi.EIssueResult.equals(mtk.CurrentTi.Answer))
 						{
-							Toast.makeText(MainActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
+							Toast.makeText(ErrorActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
 						}
 						else
 						{
-							Toast.makeText(MainActivity.this,"回答错误,正确答案是："+ mtk.CurrentTi.Answer, Toast.LENGTH_LONG).show();
+							Toast.makeText(ErrorActivity.this,"回答错误,正确答案是："+ mtk.CurrentTi.Answer, Toast.LENGTH_LONG).show();
 						}
 					}
 				}
@@ -353,7 +332,7 @@ public class MainActivity extends Activity {
 				{
 					if( mtk.CurrentTi.EIssueResult.equals(mtk.CurrentTi.Answer))
 					{
-						Toast.makeText(MainActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
+						Toast.makeText(ErrorActivity.this,"回答正确。", Toast.LENGTH_LONG).show();
 					}
 				}
 			}
@@ -366,7 +345,6 @@ public class MainActivity extends Activity {
 		if(this.mtk.GetNextTi())
 		{
 			LoadItmes();
-			SaveCurrentIndex();
 		}
 	}
 	private void GetPrevTi()
@@ -375,7 +353,6 @@ public class MainActivity extends Activity {
 		if(this.mtk.GetPrevTi())
 		{
 			LoadItmes();
-			SaveCurrentIndex();
 		}
 	}
 	
@@ -391,7 +368,7 @@ public class MainActivity extends Activity {
 				GetPrevTi();
 				break;
 			case R.id.menu_get_anser:
-				Toast.makeText(MainActivity.this,mtk.CurrentTi.Answer, 8000).show();
+				Toast.makeText(ErrorActivity.this,mtk.CurrentTi.Answer, 8000).show();
 				break;
 			case R.id.menu_jump:
 				ChangeCureentIndex();
@@ -399,24 +376,20 @@ public class MainActivity extends Activity {
 			case R.id.action_resetresult:
 				if(mtk.ClearResult())
 				{
-					Toast.makeText(MainActivity.this,"操作完成。", Toast.LENGTH_LONG).show();
+					Toast.makeText(ErrorActivity.this,"操作完成。", Toast.LENGTH_LONG).show();
 					//加载默认值
 					LoadDefultValue();
 				}
 				break;
 			case R.id.action_errorredo:
-				Intent intent = new Intent(); // 建立Intent
-				intent.setClass(MainActivity.this, ErrorActivity.class); //生词本
-				startActivity(intent);
-				finish();
-//				if(mtk.ErrorRedo())
-//				{
-//					
-//				}
-//				else
-//				{
-//					Toast.makeText(MainActivity.this,"没有错题。", Toast.LENGTH_LONG).show();
-//				}
+				if(mtk.ErrorRedo())
+				{
+					LoadDefultValue();
+				}
+				else
+				{
+					Toast.makeText(ErrorActivity.this,"没有错题。", Toast.LENGTH_LONG).show();
+				}
 				break;
 		}
 		return super.onOptionsItemSelected(item);
@@ -514,7 +487,7 @@ public class MainActivity extends Activity {
 			}
 			
 			//加载默认值			
-			LoadDefultValue();
+			//LoadDefultValue();
 		}// end if(obj != null)
 		IsSaveValue=true;
 	}

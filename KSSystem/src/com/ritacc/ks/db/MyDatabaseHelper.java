@@ -11,7 +11,7 @@ import android.util.Log;
 
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
-	final String CRETATE_TABLE="create table TI(ID integer,subjectType integer,IssueSubject NVARCHAR(500),EIssueSubject NVARCHAR(50),IssueType_ID NVARCHAR(10),Answer NVARCHAR(20),IssueResult NVARCHAR(100),EIssueResult NVARCHAR(800),ImagePath NVARCHAR(200));";
+	final String CRETATE_TABLE="create table TI(ID integer,subjectType integer,IssueSubject NVARCHAR(500),EIssueSubject NVARCHAR(50),IssueType_ID NVARCHAR(10),Answer NVARCHAR(20),IssueResult NVARCHAR(100),EIssueResult NVARCHAR(800),ImagePath NVARCHAR(200),RightNum integer);";
 	
 	public MyDatabaseHelper(Context context, String name,
 			int version) {
@@ -29,7 +29,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 		Log.d("msg", "mtk.getTK()");
 		for(TI  obj : listTi)
 		{
-			db.execSQL("insert into TI (ID,subjectType,IssueSubject,EIssueSubject,IssueType_ID,Answer,IssueResult,EIssueResult,ImagePath) values(?,?,?,?,?,?,?,?,?)"
+			db.execSQL("insert into TI (ID,subjectType,IssueSubject,EIssueSubject,IssueType_ID,Answer,IssueResult,EIssueResult,ImagePath,RightNum) values(?,?,?,?,?,?,?,?,?,0)"
 					,new String[]{obj.ID+""
 					,obj.subjectType+""
 					,obj.IssueSubject

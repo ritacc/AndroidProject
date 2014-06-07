@@ -28,6 +28,8 @@ public class TI {
 	
 	public String ImagePath ;
 	
+	public int RightNum;
+	
 	public TI(int _ID,int _subjectType,String _IssueSubject,String _EIssueSubject,String _IssueType_ID,		
 			String _Answer,String _IssueResult,String _EIssueResult,String _ImagePath)
 	{
